@@ -9,6 +9,9 @@ function initMap() {
     mapTypeId: 'terrain'
   });
 
+
+  // solution for different colored polylines found at https://stackoverflow.com/questions/14379586/drawing-multiple-polyline-with-different-color-using-google-map-api-v3-asp-net/14380703
+
   var houseMoveCoordinates = [
     {lat: -27.9591844, lng: 26.6020499},
     {lat: -27.9657077, lng: 26.7282434},
@@ -53,14 +56,70 @@ function initMap() {
     {lat: 52.4590004, lng: -2.2185321},
   ];
 
-  var houseMove = new google.maps.Polyline({
-    path: houseMoveCoordinates,
-    geodesic: true,
-    strokeColor: '#FF0000',
-    strokeOpacity: 1.0,
-    strokeWeight: 2
-  });
+  var colors = [
+    "#fb141e",
+    "#f8221f",
+    "#f53023",
+    "#f24028",
+    "#ef4f2c",
+    "#ef5b30",
+    "#f27c32",
+    "#f49d36",
+    "#f6ba37",
+    "#f9d43a",
+    "#fbe63d",
+    "#e5e53f",
+    "#b1d641",
+    "#86c945",
+    "#63be4a",
+    "#4db74e",
+    "#3fb34f",
+    "#3bb178",
+    "#38afa1",
+    "#36adbf",
+    "#34add3",
+    "#33acde",
+    "#2da5db",
+    "#2290cd",
+    "#1981c3",
+    "#1479bd",
+    "#1374ba",
+    "#0f74b9",
+    "#11539c",
+    "#15357f",
+    "#18236e",
+    "#1a1b65",
+    "#1b1862",
+    "#2f1964",
+    "#8e1f6f",
+    "#c62375",
+    "#e02577",
+    "#e7257a",
+    "#ea257a",
+    "#b03f71",
+  ]
 
-  houseMove.setMap(map);
+
+  for (var i = 0; i < houseMoveCoordinates.length-1; i++) {
+      var houseMove = new google.maps.Polyline({
+        path: [houseMoveCoordinates[i], houseMoveCoordinates[i+1]],
+        geodesic: true,
+        strokeColor: colors[i],
+        strokeOpacity: 0.7,
+        strokeWeight: 2,
+        map: map // what does this do??
+  });
+}
+
+
+//  var houseMove = new google.maps.Polyline({
+//    path: houseMoveCoordinates,
+//     geodesic: true, what does this do??
+//    strokeColor: '#FF0000',
+//    strokeOpacity: 1.0,
+//    strokeWeight: 2
+//  });
+
+//  houseMove.setMap(map);
 }
 
