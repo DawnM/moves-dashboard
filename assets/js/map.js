@@ -3,7 +3,7 @@
 // Australia which was made by Charles Kingsford Smith.
 
 function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
+  var map = new google.maps.Map(document.getElementById('route-map'), {
     zoom: 3,
     center: {lat: 21.733613, lng: 26.429477},
     mapTypeId: 'terrain'

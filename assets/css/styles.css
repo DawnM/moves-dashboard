@@ -42,7 +42,7 @@ body {
   background-color: transparent;
 }
 
-div#map {
+div#route-map {
   min-height: 700px;
   margin: 20px;
 }
