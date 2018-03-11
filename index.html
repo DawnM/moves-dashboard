@@ -10,11 +10,22 @@
   <meta name="keywords" content="HTML, CSS, JavaScript, d3, crossfilter, google maps APIs">
   <meta name="author" content="DawnM">
 
-  <!-- Bootstrap CSS -->
+  <!-- External CSS -->
   <link href="assets/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/dc.min.css" type="text/css" />
 
   <!-- My CSS -->
   <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+
+  <!-- External Charting JavaScript -->
+  <script type="text/javascript" src="assets/js/d3.min.js"></script>
+  <script type="text/javascript" src="assets/js/crossfilter.min.js"></script>
+  <script type="text/javascript" src="assets/js/dc.min.js"></script>
+  <script type="text/javascript" src="assets/js/queue.min.js"></script>
+
+  <!-- My JavaScript -->
+  <script type="text/javascript" src="assets/js/graphs.js"></script>
+
 
   <title>Nomadic Numbers</title>
 
@@ -60,7 +71,8 @@
         <p>This dashboard illustrates some of the details of the many stopping points along my life's journey.<br>Please click on any chart element to see the interactivity between all the charts.</p>
       </div>      
       <div class="mirror-jumbotron col-4">
-        This div will house a pie chart showing split between time in SA and time in the UK.
+        <h4 class="card-header">The countries I have lived in:</h4>
+        <div id="per-country-piechart"></div>
       </div>
     </div>
 
@@ -110,31 +122,17 @@
       </div>
     </div>
 
-  <!-- Maps showing location markers or similar -->
-    <div class="row justify-content-center" id="maps">
-      <div class="card text-white bg-dark mb-3 col"">
-        <h4 class="card-header">ZA Map</h4>
-        <div id="za-map" class="map">This div will house the map of South Africa</div>
-      </div>
-
-      <div class="card text-white bg-dark mb-3 col"">
-        <h4 class="card-header">UK Map</h4>
-        <div id="uk-map" class="map">This div will house the map of the UK</div>
-      </div>
-    </div>
-
   <!-- Map showing polylines from one location to the next -->
     <div class="row justify-content-center">
       <div class="card text-white bg-primary mb-3 col-md-8">
         <h4 class="card-header">Map of moves</h4>
-        <div id="route-map"></div>
+        <div class="map" id="routeMap"></div>
       </div>
     </div>
   </main>
 
   <script src="assets/js/map.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD1sOwCKoRBMOGd66c0nPixBUUAuXpM4M&callback=initMap">
-    </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD1sOwCKoRBMOGd66c0nPixBUUAuXpM4M&callback=initMap"></script>
 
   <!-- Optional Bootstrap JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS

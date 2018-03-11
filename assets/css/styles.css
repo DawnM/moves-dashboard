@@ -42,7 +42,12 @@ body {
   background-color: transparent;
 }
 
-div#route-map {
+.hint {
+  font-size: 0.7em;
+  font-style: italic;
+}
+
+div.map {
   min-height: 700px;
   margin: 20px;
 }
