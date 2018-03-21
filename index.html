@@ -28,19 +28,17 @@
 
 
   <title>Nomadic Numbers</title>
-
 </head>
 <body>
   <header class="fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Nomadic Numbers</a>
+        <!-- Button shows when screen is small enough to collapse nav-links -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
       <div class="collapse navbar-collapse justify-content-end" id="navbarColor02">
         <ul class="navbar-nav">
-          
           <li class="nav-item active">
             <a class="nav-link" href="#top">Home <span class="sr-only">(current)</span></a>
           </li>
@@ -65,67 +63,67 @@
   <!-- explanation of purpose & base pie chart -->
     <div class="row">
       <div class="jumbotron col-8">
-        <h1 class="display-3">40 homes in 36 years!</h1>
-        <p class="lead quote"><em class="">"Every day is a journey, and the journey itself is home." Matsuo Basho</em></p>
+        <h1 class="display-3" style="font-size: 4.2em">40 homes in 36 years!</h1>
+        <p class="lead quote"><em class="">"Every day is a journey, and the journey itself is home."<br> Matsuo Basho</em></p>
         <hr class="my-4">
-        <p>This dashboard illustrates some of the details of the many stopping points along my life's journey.<br>Please click on any chart element to see the interactivity between all the charts.</p>
+        <p>This dashboard illustrates details of the many stopping points along my life's journey.  <br>Although I was only in Mozambique for 3 weeks, it is an important part of my story, which is why it gets represented in the main pie chart.<br>Please click on any chart element to see the interactivity between all the charts.</p>
       </div>      
       <div class="mirror-jumbotron col-4">
-        <h4 class="card-header">The countries I have lived in:</h4>
-        <div id="per-country-piechart"></div>
+        <div class="row">
+          <div class="col" id="per-country-piechart"></div>
+        </div>
       </div>
     </div>
 
-  <!-- South African info -->
-    <div class="row justify-content-center" id="za-charts">
+  <!-- 3 Small Charts: Provinces / Towns / Suburbs per country -->
+    <div class="row justify-content-center">
      <div class="card border-success mb-3 col">
-        <h4 class="card-header">ZA Chart 1</h4>
-        <div id="za-chart-1">This div will house the chart</div>
-      </div>
-
-      <div class="card border-warning mb-3 col">
-        <h4 class="card-header">ZA Chart 2</h4>
-        <div id="za-chart-2">This div will house the chart</div>
+        <h4 class="card-header">Provinces per country</h4>
+        <div id="unique-provinces">This chart shows the number of unique provinces that I have lived in, per country</div>
       </div>
 
       <div class="card border-success mb-3 col">
-        <h4 class="card-header">ZA Chart 3</h4>
-        <div id="za-chart-3">This div will house the chart</div>
+        <h4 class="card-header">Towns per country</h4>
+        <div id="unique-towns">This chart shows the number of unique towns that I have lived in, per country</div>
       </div>
 
-      <div class="card border-warning mb-3 col">
-        <h4 class="card-header">ZA Chart 4</h4>
-        <div id="za-chart-4">This div will house the chart</div>
+      <div class="card border-success mb-3 col">
+        <h4 class="card-header">Suburbs per country</h4>
+        <div id="unique-suburbs">This chart shows the number of unique suburbs that I have lived in, per country</div>
+      </div>
+
+    </div>
+
+  <!-- 2 Medium Charts: Housing / Work Sector -->
+    <div class="row justify-content-center">
+      <div class="card border-info mb-4 col">
+        <h4 class="card-header">Living Arrangement</h4>
+        <div id="living-arrangements">This div will house a stacked bar chart showing the time spent in different living arrangements per country</div>
+      </div>
+
+      <div class="card border-info mb-4 col">
+        <h4 class="card-header">Industry Sector</h4>
+        <div id="industry-sectors">This div will house a stacked bar chart showing the time spent in different industry sectors per country</div>
+      </div>
+    </div>
+    
+  <!-- 2 Medium Charts: Lifestage Moves & Location Changes -->
+    <div class="row justify-content-center">
+      <div class="card border-danger mb-4 col">
+        <h4 class="card-header">Moves per Lifestage</h4>
+        <div id="lifestage-moves">This div will house a bar chart showing the total number of suburbs lived in during each life stage</div>
+      </div>
+
+      <div class="card border-danger mb-4 col">
+        <h4 class="card-header">Geographical Differences for Each Move</h4>
+        <div id="geographical-differences">This div will house a 3D line chart indicating the number of times I moved country / province / town / suburb at each move point, indicated by year</div>
       </div>
     </div>
 
-  <!-- British charts -->
-    <div class="row justify-content-center" id="uk-charts">
-      <div class="card border-info mb-3 col"">
-        <h4 class="card-header">UK Chart 1</h4>
-        <div id="uk-chart-1">This div will house the chart</div>
-      </div>
-
-      <div class="card border-danger mb-3 col"">
-        <h4 class="card-header">UK Chart 2</h4>
-        <div id="uk-chart-2">This div will house the chart</div>
-      </div>
-
-      <div class="card border-info mb-3 col"">
-        <h4 class="card-header">UK Chart 3</h4>
-        <div id="uk-chart-3">This div will house the chart</div>
-      </div>
-
-      <div class="card border-danger mb-3 col"">
-        <h4 class="card-header">UK Chart 4</h4>
-        <div id="uk-chart-4">This div will house the chart</div>
-      </div>
-    </div>
-
-  <!-- Map showing polylines from one location to the next -->
+  <!-- 1 Large Map showing polylines as I moved from one location to the next -->
     <div class="row justify-content-center">
       <div class="card text-white bg-primary mb-3 col-md-8">
-        <h4 class="card-header">Map of moves</h4>
+        <h4 class="card-header">My route so far...</h4>
         <div class="map" id="routeMap"></div>
       </div>
     </div>

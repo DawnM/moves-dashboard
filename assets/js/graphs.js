@@ -5,73 +5,149 @@ queue()
 function makeGraphs(error, movesData) {
   var ndx = crossfilter(movesData);
 
-//pie chart displaying number of years spent in each country
+  per_country_piechart(ndx);
+  provinces_per_country(ndx);
+  towns_per_country(ndx);
+  suburbs_per_country(ndx);
+  living_arrangement_distribution(ndx);
+  work_sector_distribution(ndx);
+  moves_per_lifestage(ndx);  
+  geographical_differences_per_move(ndx);
+
+  dc.renderAll();
+}
+
+function per_country_piechart(ndx) {
+  //pie chart displaying number of years spent in each country
   var country_dim = ndx.dimension(dc.pluck('country'));
   var total_time_per_country = country_dim.group().reduceSum(dc.pluck('months'));
 
   dc.pieChart('#per-country-piechart')
     .height(300)
+    .width(300)
+    .radius(140)
+    .transitionDuration(1000)
+    .dimension(country_dim)
+    .group(total_time_per_country);
+}
+
+function provinces_per_country(ndx) {
+  // bar chart showing unique province count per country
+  
+  // maths goes here
+  var country_dim = ndx.dimension(dc.pluck('country'));
+  var total_time_per_country = country_dim.group().reduceSum(dc.pluck('months'));
+  
+  
+  // chart specs go here
+  dc.pieChart('#unique-provinces')
+    .height(300)
     .radius(130)
     .transitionDuration(1000)
     .dimension(country_dim)
     .group(total_time_per_country);
-
-  dc.renderAll();
 }
 
-function show_lifeStage_distribution(ndx) {
-
-    function lifeStageByCountry(dimension, stage) {
-        return dimension.group().reduce(
-            function (p, v) {
-                p.total++;
-                if (v.stage === stage) {
-                    p.match++;
-                };
-                return p;
-            },
-            function (p, v) {
-                p.total--;
-                if (v.stage === stage) {
-                    p.match--;
-                };
-                return p;
-            },
-            function () {
-                return { total: 0, match: 0 };
-            }
-        );
-    };
-
-    var dim = ndx.dimension(dc.pluck("country"));
-    var infantByCountry = lifeStageByCountry(dim, "Infant");
-    var childByCountry = lifeStageByCountry(dim, "Child");
-    var teenByCountry = lifeStageByCountry(dim, "Teen");
-    var youngAdultByCountry = lifeStageByCountry(dim, "YoungAdult");
-    var adultByCountry = lifeStageByCountry(dim, "Adult");
-
-    dc.barChart("#per-lifeStage-moves")
-        .width(350)
-        .height(250)
-        .dimension(dim)
-        .group(infantByCountry, "Infant")
-        .stack(childByCountry, "Child")
-        .stack(teenByCountry, "Teen")
-        .stack(youngAdultByCountry, "YoungAdult")
-        .stack(adultByCountry, "Adult")
-        .valueAccessor(function (d) {
-            if(d.value.total > 0) {
-                return (d.value.match / d.value.total) * 100
-            } else {
-                return 0;
-            }
-            return d.value.percent * 100;
-        })
-        .x(d3.scale.ordinal())
-        .xUnits(dc.units.ordinal)
-        .xAxisLabel("Country")
-        .legend(dc.legend().x(270).y(170).itemHeight(15).gap(5))
-        .margins({top: 10, right: 100, bottom: 30, left: 30});
-
-      dc.renderAll();
+function towns_per_country(ndx) {
+  // bar chart showing unique town count per country
+  
+  // maths goes here
+  var country_dim = ndx.dimension(dc.pluck('country'));
+  var total_time_per_country = country_dim.group().reduceSum(dc.pluck('months'));
+  
+  
+  // chart specs go here
+  dc.pieChart('#unique-towns')
+    .height(300)
+    .radius(130)
+    .transitionDuration(1000)
+    .dimension(country_dim)
+    .group(total_time_per_country);
 }
+
+function suburbs_per_country(ndx) {
+  // bar chart showing unique town count per country
+  
+  // maths goes here
+  var country_dim = ndx.dimension(dc.pluck('country'));
+  var total_time_per_country = country_dim.group().reduceSum(dc.pluck('months'));
+  
+  
+  // chart specs go here
+  dc.pieChart('#unique-suburbs')
+    .height(300)
+    .radius(130)
+    .transitionDuration(1000)
+    .dimension(country_dim)
+    .group(total_time_per_country);
+}
+
+function living_arrangement_distribution(ndx) {
+  // stacked bar chart showing housing to sum of months
+  
+  // maths goes here
+  var country_dim = ndx.dimension(dc.pluck('country'));
+  var total_time_per_country = country_dim.group().reduceSum(dc.pluck('months'));
+  
+  
+  // chart specs go here
+  dc.pieChart('#living-arrangements')
+    .height(300)
+    .radius(130)
+    .transitionDuration(1000)
+    .dimension(country_dim)
+    .group(total_time_per_country);
+}
+
+function work_sector_distribution(ndx) {
+  // stacked bar chart showing ocupation to sum of months (do not include data for "none" or any education category other than "tertiary")
+  
+  // maths goes here
+  var country_dim = ndx.dimension(dc.pluck('country'));
+  var total_time_per_country = country_dim.group().reduceSum(dc.pluck('months'));
+  
+  
+  // chart specs go here
+  dc.pieChart('#industry-sectors')
+    .height(300)
+    .radius(130)
+    .transitionDuration(1000)
+    .dimension(country_dim)
+    .group(total_time_per_country);
+}
+
+function moves_per_lifestage(ndx) {
+  // bar chart showing count of suburb per life-stage
+  
+  // maths goes here
+  var country_dim = ndx.dimension(dc.pluck('country'));
+  var total_time_per_country = country_dim.group().reduceSum(dc.pluck('months'));
+  
+  
+  // chart specs go here
+  dc.pieChart("#lifestage-moves")
+    .height(300)
+    .radius(130)
+    .transitionDuration(1000)
+    .dimension(country_dim)
+    .group(total_time_per_country);
+}
+
+function geographical_differences_per_move(ndx) {
+  // 3D line chart showing country / province / town / suburb changes per year
+  
+  // maths goes here
+  var country_dim = ndx.dimension(dc.pluck('country'));
+  var total_time_per_country = country_dim.group().reduceSum(dc.pluck('months'));
+  
+  
+  // chart specs go here
+  dc.pieChart('#geographical-differences')
+    .height(300)
+    .radius(130)
+    .transitionDuration(1000)
+    .dimension(country_dim)
+    .group(total_time_per_country);
+}
+
+
