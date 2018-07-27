@@ -1,0 +1,43 @@
+﻿country,province,town,suburb,housing,stage,occupation,months,years
+South Africa,Free State,Welkom,Bedelia,Family - Mum,Infant,,12,1
+South Africa,Free State,Welkom,Bedelia,Family - Mum,Infant,,12,1
+South Africa,Free State,Welkom,Riebeekstad,Family - Mum,Infant,,10,0.833333333
+South Africa,Free State,Welkom,Bedelia,Family - Mum,Child,School,1,0.083333333
+South Africa,Free State,Welkom,St Helena,Family - Mum,Child,School,4,0.333333333
+South Africa,Free State,Welkom,Naudeville,Family - Mum,Child,School,14,1.166666667
+South Africa,Free State,Welkom,Flamingo Park,Family - Mum,Child,School,54,4.5
+United Kingdom,London,London,New Southgate,Family - Mum,Child,School,3,0.25
+United Kingdom,West Midlands,Wolverhampton,Tettenhall Wood,Family - Mum,Child,School,59,4.916666667
+South Africa,Northern Cape,Lime Acres,Lime Acres,Family - Mum,Teen,School,2,0.166666667
+South Africa,Northern Cape,Kimberley,Belgravia,Boarding School,Teen,School,3,0.25
+South Africa,Northern Cape,Lime Acres,Lime Acres,Family - Mum,Teen,School,25,2.083333333
+South Africa,Northern Cape,Kimberley,Monument Heigths,Private Boarding,Teen,School,11,0.916666667
+South Africa,Northern Cape,Lime Acres,Lime Acres,Family - Mum,Teen,College,18,1.5
+South Africa,Kwa-Zulu Natal,Pinetown,New Germany,Family - Dad,YoungAdult,Design,1,0.083333333
+South Africa,Kwa-Zulu Natal,Pinetown,Kloof,Family - Dad,YoungAdult,Design,1,0.083333333
+South Africa,Kwa-Zulu Natal,Pinetown,Gillets,Houseshare,YoungAdult,Design,14,1.166666667
+South Africa,Kwa-Zulu Natal,Ballito,Ballito,Family - Extended,YoungAdult,Tourism,11,0.916666667
+South Africa,Northern Cape,Lime Acres,Lime Acres,Family - Inlaws,YoungAdult,Unemployed,4,0.333333333
+South Africa,Gauteng,Centurion,Lyttelton Manor,Houseshare,YoungAdult,IT Solutions,14,1.166666667
+South Africa,Gauteng,Centurion,Highveld,Family - Extended,YoungAdult,IT Solutions,16,1.333333333
+South Africa,Western Cape,Knysna,Upper Old Place,Family - Inlaws,YoungAdult,Tourism,26,2.166666667
+South Africa,Gauteng,Centurion,Mnandi,Houseshare,Adult,Logistics,11,0.916666667
+South Africa,Limpopo,Mookgopong,Entabeni,Game Reserve,Adult,Tourism,9,0.75
+Mozambique,Inhambane,Vilankulos,San Sebastian Peninsula,Beach Lodge,Adult,Tourism,1,0.083333333
+South Africa,Gauteng,Centurion,Mnandi,Family - Inlaws,Adult,Tourism,6,0.5
+United Kingdom,East Sussex,Eastbourne,Upperton,Houseshare,Adult,Social Care,2,0.166666667
+United Kingdom,East Sussex,Eastbourne,Old Town,Rental,Adult,Insurance,16,1.333333333
+United Kingdom,East Sussex,Bexhill,Bexhill-on-Sea,Rental,Adult,Insurance,6,0.5
+South Africa,Gauteng,Johannesburg,Bergbron,Family - Mum,Adult,Holiday,2,0.166666667
+South Africa,Kwa-Zulu Natal,Westville,Westville,Family - Extended,Adult,Beauty,6,0.5
+South Africa,Free State,Fiksburg,Fleur de Lis,Family - Mum,Adult,Family Care,4,0.333333333
+South Africa,Gauteng,Johannesburg,Bergbron,Family - Mum,Adult,Family Care,4,0.333333333
+South Africa,Western Cape,Cape Town,Brackenfell,Family - Extended,Adult,Unemployed,3,0.25
+South Africa,Western Cape,Knysna,Hunters Home,Rental,Adult,Retail,5,0.416666667
+South Africa,Western Cape,Cape Town,Brackenfell,Family - Extended,Adult,Holiday,1,0.083333333
+South Africa,Western Cape,Knysna,Lower Central,Rental,Adult,Insurance,17,1.416666667
+South Africa,Western Cape,Knysna,Lower Old Place,Rental,Adult,Insurance,6,0.5
+South Africa,Western Cape,Knysna,Upper Central,Family - Inlaws,Adult,College,13,1.083333333
+United Kingdom,West Midlands,Wolverhampton,Warstones,Family - Mum,Adult,Recruitment,4,0.333333333
+United Kingdom,West Midlands,Stourbridge,Stourbridge,Houseshare,Adult,College,10,0.833333333
+United Kingdom,West Midlands,Stourbridge,Stourbridge,Rental,Adult,College,3,0.25

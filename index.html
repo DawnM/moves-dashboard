@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-gb">
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -7,21 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="description" content="Dashboard showing data visualisation of all the times I have moved house">
-  <meta name="keywords" content="HTML, CSS, JavaScript, d3, crossfilter, google maps APIs">
+  <meta name="keywords" content="HTML, CSS, JavaScript, d3.js, dc.js, crossfilter.js, google maps APIs">
   <meta name="author" content="DawnM">
 
   <!-- External CSS -->
   <link href="assets/bootstrap/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/dc.min.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/3.0.6/dc.css" />
 
   <!-- My CSS -->
   <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
 
   <!-- External Charting JavaScript -->
-  <script type="text/javascript" src="assets/js/d3.min.js"></script>
-  <script type="text/javascript" src="assets/js/crossfilter.min.js"></script>
-  <script type="text/javascript" src="assets/js/dc.min.js"></script>
-  <script type="text/javascript" src="assets/js/queue.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/3.0.6/dc.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.js"></script>
 
   <!-- My JavaScript -->
   <script type="text/javascript" src="assets/js/graphs.js"></script>
@@ -30,35 +31,16 @@
   <title>Nomadic Numbers</title>
 </head>
 <body>
-  <header class="fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Nomadic Numbers</a>
-        <!-- Button shows when screen is small enough to collapse nav-links -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarColor02">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#top">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-link">|</li>
-          <li class="nav-item">
-            <a class="nav-link" href="#za-charts">South Africa</a>
-          </li>
-          <li class="nav-link">|</li>
-          <li class="nav-item">
-            <a class="nav-link" href="#uk-charts">England</a>
-          </li>
-          <li class="nav-link">|</li>
-          <li class="nav-item">
-            <a class="nav-link" href="#maps">Maps</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <main class="container-fluid">
+  <nav id="sidebar">
+    <p class="title">Nomadic Numbers</p>
+      <ul class="my-nav">
+        <li><a class="my-link" href="#top">Home</a></li>
+        <li><a class="my-link" href="#regional">Regional Data</a></li>
+        <li><a class="my-link" href="#lifestyles">Lifestyle Data</a></li>
+        <li><a class="my-link" href="#the-map">Journey Map</a></li>
+      </ul>
+  </nav>
+  <main id="content">
 
   <!-- explanation of purpose & base pie chart -->
     <div class="row">
@@ -76,26 +58,26 @@
     </div>
 
   <!-- 3 Small Charts: Provinces / Towns / Suburbs per country -->
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" id="regional">
      <div class="card border-success mb-3 col">
-        <h4 class="card-header">Provinces per country</h4>
-        <div id="unique-provinces">This chart shows the number of unique provinces that I have lived in, per country</div>
+        <h4 class="card-header">Provinces</h4>
+        <div id="unique-provinces">The time in years that I spent in each province.</div>
       </div>
 
       <div class="card border-success mb-3 col">
-        <h4 class="card-header">Towns per country</h4>
-        <div id="unique-towns">This chart shows the number of unique towns that I have lived in, per country</div>
+        <h4 class="card-header">Towns</h4>
+        <div id="unique-towns">The time in years that I spent in each town.</div>
       </div>
 
       <div class="card border-success mb-3 col">
-        <h4 class="card-header">Suburbs per country</h4>
-        <div id="unique-suburbs">This chart shows the number of unique suburbs that I have lived in, per country</div>
+        <h4 class="card-header">Suburbs</h4>
+        <div id="unique-suburbs">The time in years that I spent in each suburb.</div>
       </div>
 
     </div>
 
   <!-- 2 Medium Charts: Housing / Work Sector -->
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" id="lifestyles">
       <div class="card border-info mb-4 col">
         <h4 class="card-header">Living Arrangement</h4>
         <div id="living-arrangements">This div will house a stacked bar chart showing the time spent in different living arrangements per country</div>
@@ -108,7 +90,7 @@
     </div>
     
   <!-- 2 Medium Charts: Lifestage Moves & Location Changes -->
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" id="lifespan">
       <div class="card border-danger mb-4 col">
         <h4 class="card-header">Moves per Lifestage</h4>
         <div id="lifestage-moves">This div will house a bar chart showing the total number of suburbs lived in during each life stage</div>
@@ -121,7 +103,7 @@
     </div>
 
   <!-- 1 Large Map showing polylines as I moved from one location to the next -->
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" id="the-map">
       <div class="card text-white bg-primary mb-3 col-md-8">
         <h4 class="card-header">My route so far...</h4>
         <div class="map" id="routeMap"></div>

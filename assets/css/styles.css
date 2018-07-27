@@ -1,16 +1,59 @@
 body {
   letter-spacing: 0.2em;
-  max-width: 90%;
-  margin: 0 auto;
+  margin: 6px;
 }
 
-.fixed-top {
-  max-width: 90%;
-  margin: 0 auto;
+#sidebar {
+  height: 97vh;
+  width: 17vw;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden; /* Disables horizontal scroll */
+
+  background-color: #868e96;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 25px 25px 55px 5px/5px 55px 25px 25px;
+  font-family: "Cabin Sketch", cursive;
+  margin: 1vh;
+  padding: 1vh; 
 }
 
-.container-fluid {
-  margin-top: 4rem;
+.title {
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.my-nav {
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  color: #fff;
+  font-size: 1.2em;
+}
+
+.my-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.my-link:hover {
+  font-size: 1.3rem;
+  text-decoration: underline;
+  color: #fff;
+}
+
+#content {
+  margin-left: 20vw;
+  margin-right: 2vw;
 }
 
 .quote {
@@ -19,7 +62,6 @@ body {
 
 .jumbotron,
 .mirror-jumbotron {
-  margin-top: 1rem;
   padding: 2rem 1rem;
 }
 
@@ -31,7 +73,7 @@ body {
 }
 
 .row {
-  margin-bottom: 1rem;
+  margin-bottom: 1vh;
 }
 
 .card {
