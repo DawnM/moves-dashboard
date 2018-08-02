@@ -1,5 +1,5 @@
 queue()
-  .defer(d3.csv, "https://github.com/DawnM/moves-dashboard/blob/master/assets/data/moves2.csv")
+  .defer(d3.csv, "./moves2.csv")
   .await(makeGraphs);
 
 // function makeGraphs(error, movesData) {
