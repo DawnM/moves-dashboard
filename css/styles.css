@@ -95,8 +95,9 @@ h1 {
 }
 
 #per-country-piechart > svg {
+  width: 15vw;
   display: block;
-  margin: 0 auto;
+  margin-top: 10vh;
 }
 
 #living-arrangements .x.axis text { /* solution from https://github.com/dc-js/dc.js/issues/731 */
@@ -161,5 +162,6 @@ div.map {
 
 .close-popup {
   text-align: right;
+  cursor: pointer;
 }
 

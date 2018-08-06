@@ -9,8 +9,8 @@ function makeGraphs(error, movesData) {
   var country_dim = ndx.dimension(dc.pluck('country'));
   var years_per_country = country_dim.group().reduceSum(dc.pluck('years'));
   dc.pieChart('#per-country-piechart')
-    .height(300)
-    .radius(130)
+    .height(250)
+    .radius(120)
     .transitionDuration(1500)
     .dimension(country_dim)
     .group(years_per_country);
