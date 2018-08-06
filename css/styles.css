@@ -99,8 +99,20 @@ h1 {
   margin: 0 auto;
 }
 
+#living-arrangements .x.axis text { /* solution from https://github.com/dc-js/dc.js/issues/731 */
+    text-anchor: end !important; /* prevents labels overlapping chart */
+    transform: rotate(-45deg);
+    font-weight: bold;
+}
+
+#industry-sectors .x.axis text {
+    text-anchor: end !important;
+    transform: rotate(-45deg);
+    font-weight: bold;
+}
+
 div.map {
-  min-height: 700px;
+  min-height: 75vh;
   margin: 20px;
 }
 
@@ -158,3 +170,4 @@ div.map {
     from {opacity: 0;}
     to {opacity:1 ;}
 }
+
