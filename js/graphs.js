@@ -9,8 +9,8 @@ function makeGraphs(error, movesData) {
   var country_dim = ndx.dimension(dc.pluck('country'));
   var years_per_country = country_dim.group().reduceSum(dc.pluck('years'));
   dc.pieChart('#per-country-piechart')
-    .height(330)
-    .radius(150)
+    .height(300)
+    .radius(130)
     .transitionDuration(1500)
     .dimension(country_dim)
     .group(years_per_country);
@@ -109,8 +109,8 @@ function makeGraphs(error, movesData) {
         
   var stackedChart = dc.barChart("#living-arrangements");
   stackedChart
-    .width(700)
-    .height(700)
+    .width(650)
+    .height(450)
     .dimension(province_dim)
     .group(housingMum, "With Mum")
     .stack(housingDad, "With Dad")
@@ -121,12 +121,12 @@ function makeGraphs(error, movesData) {
     .stack(housingReserve, "Game Reserve")
     .x(d3.scale.ordinal())
     .xUnits(dc.units.ordinal)
-    .legend(dc.legend().x(410).y(70).itemHeight(15).gap(5));
+    .legend(dc.legend().x(480).y(70).itemHeight(10).gap(5))
+    .ordering(function(d) { return -d.value; });
   stackedChart.margins().top = 60;
   stackedChart.margins().right = 60;
   stackedChart.margins().bottom = 100;
   stackedChart.margins().left = 60;
-  
   
   /* stacked bar chart showing employment industry distribution */
   /* province_dim already declared */
@@ -222,8 +222,8 @@ function makeGraphs(error, movesData) {
         
   var stackedChart = dc.barChart("#industry-sectors");
   stackedChart
-    .width(700)
-    .height(700)
+    .width(650)
+    .height(450)
     .dimension(province_dim)
     .group(occupationSchool, "School")
     .stack(occupationDesign, "Design")
@@ -238,7 +238,8 @@ function makeGraphs(error, movesData) {
     .stack(occupationCollege, "College")
     .x(d3.scale.ordinal())
     .xUnits(dc.units.ordinal)
-    .legend(dc.legend().x(410).y(70).itemHeight(15).gap(5));
+    .ordering(function(d) { return -d.value; })
+    .legend(dc.legend().x(480).y(70).itemHeight(15).gap(5));
   stackedChart.margins().top = 60;
   stackedChart.margins().right = 60;
   stackedChart.margins().bottom = 100;

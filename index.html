@@ -42,41 +42,41 @@
       <li><a class="my-link" href="#lifespan">Lifespan Charts</a></li>
       <li><a class="my-link" href="#the-map">Journey Map</a></li>
     </ul>
+    <div id="per-country-piechart"></div>
   </nav>
   <main id="content">
 
   <!-- explanation of purpose & base pie chart -->
     <div class="row">
-      <div class="jumbotron col-8">
+      <div class="jumbotron col-12">
         <h1 class="display-3">40 homes in 36 years!</h1>
-        <p class="lead quote"><em class="">"Every day is a journey, and the journey itself is home."<br> Matsuo Basho</em></p>
+        <p class="lead quote"><em class="">"Every day is a journey, and the journey itself is home." &mdash; Matsuo Basho</em></p>
         <hr class="my-4">
-        <p>This dashboard illustrates details of the many stopping points along my life's journey.  <br>I was only in Mozambique for 3 weeks, which is too short a time-period to be visible in the carts. However, it is an important part of my story, which is why it is represented on the <a href="#the-map">journey map</a>.<br>Please click on any chart element to see the interactivity between all the charts.</p>
-          <div class="info-popup"><p onclick="popupFunction()">(click here for more on how to use this dashboard...)</p>
-            <span class="popuptext" id="myInfoPopup"><p>Clicking on any segment of a chart will change the data in all charts to be relevent to the segment that you clicked.</p><p>For example, if you click the "UK" segment in the main pie chart at the top of the page, all other charts will only show data pertinent to my time in the UK.</p><p>Click the same segment again to deselect that data subset, or click additional segments (on the same or other charts) to filter the data further.</p><p id="close-popup"  onclick="popupFunction()">Close</p></span>
-          </div>
-      </div>      
-      <div class="mirror-jumbotron col-4">
-        <div class="row">
-          <div class="col" id="per-country-piechart"></div>
+        <p>This dashboard illustrates details of the many stopping points along my life's journey.  Click on any chart element to see the <span class="pointer" onclick="popupFunction()">interactivity</span> between all the charts.<br>I was only in Mozambique for 3 weeks, which is too short a time-period to be visible in the carts. However, it is an important part of my story, which is why it is represented on the <a href="#the-map">journey map</a>.</p>
+        <div class="info-popup">
+          <span class="popuptext" id="myInfoPopup"><p>Clicking on any segment of a chart will change the data in all charts to be relevent to the segment that you clicked.</p><p>For example, if you click the "UK" segment in the main pie chart in the sidebar, all other charts will only show data pertinent to my time in the UK.</p><p>Click the same segment again to deselect that data subset, or click additional segments (on the same or other charts) to filter the data further.</p><p class="close-popup"  onclick="popupFunction()">Close</p></span>
         </div>
       </div>
-    </div>
-
+      <!--<div class="mirror-jumbotron col-4">-->
+      <!--  <div class="row">-->
+          
+      <!--  </div>-->
+      </div>
+    
   <!-- Regional Charts in Years -->
     <div class="row justify-content-center" id="regional">
      <div class="card border-success mb-3 col">
-        <h4 class="card-header">Provinces</h4>
+        <h4 class="card-header">Years per Province</h4>
         <div id="years-per-province"></div>
       </div>
 
       <div class="card border-success mb-3 col">
-        <h4 class="card-header">Towns</h4>
+        <h4 class="card-header">Years per Town</h4>
         <div id="years-per-town"></div>
       </div>
 
       <div class="card border-success mb-3 col">
-        <h4 class="card-header">Suburbs</h4>
+        <h4 class="card-header">Years per Suburb</h4>
         <div id="years-per-suburb"></div>
       </div>
 
@@ -85,12 +85,13 @@
   <!-- Home & Work Charts -->
     <div class="row justify-content-center" id="lifestyles">
       <div class="card border-info mb-4 col">
-        <h4 class="card-header">Living Arrangement</h4>
+        <h4 class="card-header">Living Arrangement Distribution</h4>
+        <div id="living-arrangements-legend"></div>
         <div id="living-arrangements"></div>
       </div>
 
       <div class="card border-info mb-4 col">
-        <h4 class="card-header">Industry Sector</h4>
+        <h4 class="card-header">Industry Sector Distribution</h4>
         <div id="industry-sectors"></div>
       </div>
     </div>
