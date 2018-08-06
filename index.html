@@ -28,29 +28,33 @@
 
   <!-- My JavaScript -->
   <script type="text/javascript" src="js/graphs.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
 
 
   <title>Nomadic Numbers</title>
 </head>
 <body>
   <nav id="sidebar">
-    <p class="title">Nomadic Numbers</p>
-      <ul class="my-nav">
-        <li><a class="my-link" href="#top">Home</a></li>
-        <li><a class="my-link" href="#regional">Regional Data</a></li>
-        <li><a class="my-link" href="#lifestyles">Lifestyle Data</a></li>
-        <li><a class="my-link" href="#the-map">Journey Map</a></li>
-      </ul>
+    <p><a class="title" href="#top">Nomadic Numbers</a></p>
+    <ul class="my-nav">
+      <li><a class="my-link" href="#regional">Regional Charts</a></li>
+      <li><a class="my-link" href="#lifestyles">Lifestyle Charts</a></li>
+      <li><a class="my-link" href="#lifespan">Lifespan Charts</a></li>
+      <li><a class="my-link" href="#the-map">Journey Map</a></li>
+    </ul>
   </nav>
   <main id="content">
 
   <!-- explanation of purpose & base pie chart -->
     <div class="row">
       <div class="jumbotron col-8">
-        <h1 class="display-3" style="font-size: 4.2em">40 homes in 36 years!</h1>
+        <h1 class="display-3">40 homes in 36 years!</h1>
         <p class="lead quote"><em class="">"Every day is a journey, and the journey itself is home."<br> Matsuo Basho</em></p>
         <hr class="my-4">
-        <p>This dashboard illustrates details of the many stopping points along my life's journey.  <br>I was only in Mozambique for 3 weeks, which is why it is not represented in the charts. However, it is an important part of my story, which is why it is represented on the journey map.<br>Please click on any chart element to see the interactivity between all the charts.</p>
+        <p>This dashboard illustrates details of the many stopping points along my life's journey.  <br>I was only in Mozambique for 3 weeks, which is too short a time-period to be visible in the carts. However, it is an important part of my story, which is why it is represented on the <a href="#the-map">journey map</a>.<br>Please click on any chart element to see the interactivity between all the charts.</p>
+          <div class="info-popup"><p onclick="popupFunction()">(click here for more on how to use this dashboard...)</p>
+            <span class="popuptext" id="myInfoPopup"><p>Clicking on any segment of a chart will change the data in all charts to be relevent to the segment that you clicked.</p><p>For example, if you click the "UK" segment in the main pie chart at the top of the page, all other charts will only show data pertinent to my time in the UK.</p><p>Click the same segment again to deselect that data subset, or click additional segments (on the same or other charts) to filter the data further.</p><p id="close-popup"  onclick="popupFunction()">Close</p></span>
+          </div>
       </div>      
       <div class="mirror-jumbotron col-4">
         <div class="row">
@@ -78,7 +82,7 @@
 
     </div>
 
-  <!-- 2 Medium Charts: Housing / Work Sector -->
+  <!-- Home & Work Charts -->
     <div class="row justify-content-center" id="lifestyles">
       <div class="card border-info mb-4 col">
         <h4 class="card-header">Living Arrangement</h4>
@@ -91,7 +95,7 @@
       </div>
     </div>
     
-  <!-- 2 Medium Charts: Lifestage Moves & Location Changes -->
+  <!-- Lifestage Moves & Location Changes -->
     <div class="row justify-content-center" id="lifespan">
       <div class="card border-danger mb-4 col">
         <h4 class="card-header">Moves per Lifestage</h4>

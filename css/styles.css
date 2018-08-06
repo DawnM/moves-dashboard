@@ -16,14 +16,15 @@ body {
   border-width: 2px;
   border-style: solid;
   border-radius: 25px 25px 55px 5px/5px 55px 25px 25px;
-  font-family: "Cabin Sketch", cursive;
   margin: 1vh;
   padding: 1vh; 
 }
 
 .title {
-  font-size: 1.3rem;
-  color: #fff;
+  font-family: "Cabin Sketch", cursive;
+  font-size: 1.6rem;
+  color: #000;
+  text-decoration: none;
 }
 
 .my-nav {
@@ -72,6 +73,10 @@ body {
   border-radius: 25px 555px 25px 15px/5px 25px 555px 35px;
 }
 
+h1 {
+  font-size: 4.2em;
+}
+
 .row {
   margin-bottom: 1vh;
 }
@@ -97,4 +102,59 @@ body {
 div.map {
   min-height: 700px;
   margin: 20px;
+}
+
+/* Popup container */
+.info-popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    font-style: italic;
+}
+
+/* The actual popup (appears on top) */
+.info-popup .popuptext {
+    visibility: hidden;
+    width: 600px;
+    background-color: #555;
+    font-size: 1em;
+    color: #fff;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+    font-style: normal;
+}
+
+/* Popup arrow */
+.info-popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.info-popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* Add animation (fade in/out the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
 }
