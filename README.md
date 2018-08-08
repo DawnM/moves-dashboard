@@ -1,4 +1,4 @@
-# CV Website
+# Nomadic Numbers - A Data Dashboard
 
 This website is a dashboard depicting data relating to the number of times I have moved house.
 The information will be presented in a series of charts and a map:
