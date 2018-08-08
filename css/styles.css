@@ -1,6 +1,11 @@
 body {
   letter-spacing: 0.2em;
   margin: 6px;
+  font-family: "Neucha", Verdana, Geneva, sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Cabin Sketch", "Arial Black", Gadget, sans-serif;
 }
 
 #sidebar {
