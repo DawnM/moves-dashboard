@@ -3,6 +3,21 @@ queue()
   .await(makeGraphs);
 
 function makeGraphs(error, movesData) {
+  var countryColors = d3.scale.ordinal().range(["#ffc107", "#17a2b8"]);
+  // var pieColors = d3.scale.ordinal().range([
+  //   "#401A18", "#7F3430", "#BF4E49", "#E55D57", "#FF6861", 
+  //   "#402718", "#7F4F30", "#BF7648", "#E58D56", "#FF9D5F", 
+  //   "#403A1B", "#7F7437", "#BFAE52", "#E5D163", "#FFE86E", 
+  //   "#2A401B", "#547F36", "#7EBF51", "#97E561", "#A8FF6C", 
+  //   "#1C403F", "#387F7F", "#54BFBE", "#65E5E4", "#70FFFD", 
+  //   "#242740", "#494E7F", "#6D74BF", "#838CE5", "#929BFF", 
+  //   "#3D1D40", "#793B7F", "#B658BF", "#DA6AE5", "#F275FF"
+  // ]);
+  
+  var barColors = [
+    "#f53023", "#f27c32", "#fbe63d", "#b1d641", "#3fb34f",  "#34add3", "#1981c3", "#11539c", "#1b1862", "#ea257a", "#8e1f6f", 
+  ];
+  
   var ndx = crossfilter(movesData);
   
   /* main pie chart showing years per country */
@@ -13,7 +28,8 @@ function makeGraphs(error, movesData) {
     .radius(120)
     .transitionDuration(1500)
     .dimension(country_dim)
-    .group(years_per_country);
+    .group(years_per_country)
+    .colors(countryColors);
   
   /* pie chart showing years per province */
   var province_dim = ndx.dimension(dc.pluck('province'));
@@ -45,13 +61,12 @@ function makeGraphs(error, movesData) {
     .transitionDuration(1500)
     .dimension(suburb_dim)
     .group(years_per_suburb);
-      
   
-  /* stacked bar chart showing living arrangment distribution */
-  /* province_dim already declared */
+  /* stacked bar chart showing living arrangment per age group */
+    var ageGroup_dim = ndx.dimension(dc.pluck('age'));
   
     /* group the segments of data for the stacks */
-    var housingMum = province_dim.group().reduceSum(function (d) {
+    var housingMum = ageGroup_dim.group().reduceSum(function (d) {
       if (d.housing === 'With Mum') {
           return +d.years;
       } else {
@@ -59,7 +74,7 @@ function makeGraphs(error, movesData) {
       }
     });
     
-    var housingDad = province_dim.group().reduceSum(function (d) {
+    var housingDad = ageGroup_dim.group().reduceSum(function (d) {
       if (d.housing === 'With Dad') {
           return +d.years;
       } else {
@@ -67,7 +82,7 @@ function makeGraphs(error, movesData) {
       }
     });
     
-    var housingFamily = province_dim.group().reduceSum(function (d) {
+    var housingFamily = ageGroup_dim.group().reduceSum(function (d) {
       if (d.housing === 'Family Other') {
           return +d.years;
       } else {
@@ -75,7 +90,7 @@ function makeGraphs(error, movesData) {
       }
     });
     
-    var housingSchool = province_dim.group().reduceSum(function (d) {
+    var housingSchool = ageGroup_dim.group().reduceSum(function (d) {
       if (d.housing === 'Boarding School') {
           return +d.years;
       } else {
@@ -83,7 +98,7 @@ function makeGraphs(error, movesData) {
       }
     });
     
-    var housingShare = province_dim.group().reduceSum(function (d) {
+    var housingShare = ageGroup_dim.group().reduceSum(function (d) {
       if (d.housing === 'House Share') {
           return +d.years;
       } else {
@@ -91,7 +106,7 @@ function makeGraphs(error, movesData) {
       }
     });
     
-    var housingRental = province_dim.group().reduceSum(function (d) {
+    var housingRental = ageGroup_dim.group().reduceSum(function (d) {
       if (d.housing === 'Rental') {
           return +d.years;
       } else {
@@ -99,7 +114,7 @@ function makeGraphs(error, movesData) {
       }
     });
     
-    var housingReserve = province_dim.group().reduceSum(function (d) {
+    var housingReserve = ageGroup_dim.group().reduceSum(function (d) {
       if (d.housing === 'Game Reserve') {
           return +d.years;
       } else {
@@ -111,7 +126,7 @@ function makeGraphs(error, movesData) {
   stackedChart
     .width(650)
     .height(450)
-    .dimension(province_dim)
+    .dimension(ageGroup_dim)
     .group(housingMum, "With Mum")
     .stack(housingDad, "With Dad")
     .stack(housingFamily, "Other Family")
@@ -121,18 +136,18 @@ function makeGraphs(error, movesData) {
     .stack(housingReserve, "Game Reserve")
     .x(d3.scale.ordinal())
     .xUnits(dc.units.ordinal)
-    .legend(dc.legend().x(480).y(70).itemHeight(10).gap(5))
-    .ordering(function(d) { return -d.value; });
-  stackedChart.margins().top = 60;
-  stackedChart.margins().right = 60;
-  stackedChart.margins().bottom = 100;
-  stackedChart.margins().left = 60;
+    .ordinalColors(barColors)
+    .legend(dc.legend().x(100).y(50).itemHeight(13).gap(5))
+  stackedChart.margins().top = 40;
+  stackedChart.margins().right = 40;
+  stackedChart.margins().bottom = 40;
+  stackedChart.margins().left = 40;
   
-  /* stacked bar chart showing employment industry distribution */
-  /* province_dim already declared */
+  /* stacked bar chart showing employment industry per age group */
+    /* ageGroup_dim already declared */
   
     /* group the segments of data for the stacks */
-    var occupationSchool = province_dim.group().reduceSum(function (d) {
+    var occupationSchool = ageGroup_dim.group().reduceSum(function (d) {
       if (d.occupation === 'School') {
           return +d.years;
       } else {
@@ -140,7 +155,7 @@ function makeGraphs(error, movesData) {
       }
     });
     
-    var occupationDesign = province_dim.group().reduceSum(function (d) {
+    var occupationDesign = ageGroup_dim.group().reduceSum(function (d) {
       if (d.occupation === 'Design') {
           return +d.years;
       } else {
@@ -148,7 +163,7 @@ function makeGraphs(error, movesData) {
       }
     });
     
-    var occupationTourism = province_dim.group().reduceSum(function (d) {
+    var occupationTourism = ageGroup_dim.group().reduceSum(function (d) {
       if (d.occupation === 'Tourism') {
           return +d.years;
       } else {
@@ -156,7 +171,7 @@ function makeGraphs(error, movesData) {
       }
     });
     
-    var occupationIT = province_dim.group().reduceSum(function (d) {
+    var occupationIT = ageGroup_dim.group().reduceSum(function (d) {
       if (d.occupation === 'IT Solutions') {
           return +d.years;
       } else {
@@ -164,7 +179,7 @@ function makeGraphs(error, movesData) {
       }
     });
     
-    var occupationLogistics = province_dim.group().reduceSum(function (d) {
+    var occupationLogistics = ageGroup_dim.group().reduceSum(function (d) {
       if (d.occupation === 'Logistics') {
           return +d.years;
       } else {
@@ -172,7 +187,7 @@ function makeGraphs(error, movesData) {
       }
     });
     
-    var occupationSocialCare = province_dim.group().reduceSum(function (d) {
+    var occupationSocialCare = ageGroup_dim.group().reduceSum(function (d) {
       if (d.occupation === 'Social Care') {
           return +d.years;
       } else {
@@ -180,7 +195,7 @@ function makeGraphs(error, movesData) {
       }
     });
     
-    var occupationInsurance = province_dim.group().reduceSum(function (d) {
+    var occupationInsurance = ageGroup_dim.group().reduceSum(function (d) {
       if (d.occupation === 'Insurance') {
           return +d.years;
       } else {
@@ -188,7 +203,7 @@ function makeGraphs(error, movesData) {
       }
     });
     
-    var occupationBeauty = province_dim.group().reduceSum(function (d) {
+    var occupationBeauty = ageGroup_dim.group().reduceSum(function (d) {
       if (d.occupation === 'Beauty') {
           return +d.years;
       } else {
@@ -196,7 +211,7 @@ function makeGraphs(error, movesData) {
       }
     });
     
-    var occupationRetail = province_dim.group().reduceSum(function (d) {
+    var occupationRetail = ageGroup_dim.group().reduceSum(function (d) {
       if (d.occupation === 'Retail') {
           return +d.years;
       } else {
@@ -204,7 +219,7 @@ function makeGraphs(error, movesData) {
       }
     });
     
-    var occupationRecruitment = province_dim.group().reduceSum(function (d) {
+    var occupationRecruitment = ageGroup_dim.group().reduceSum(function (d) {
       if (d.occupation === 'Recruitment') {
           return +d.years;
       } else {
@@ -212,7 +227,7 @@ function makeGraphs(error, movesData) {
       }
     });
     
-    var occupationCollege = province_dim.group().reduceSum(function (d) {
+    var occupationCollege = ageGroup_dim.group().reduceSum(function (d) {
       if (d.occupation === 'College') {
           return +d.years;
       } else {
@@ -224,7 +239,7 @@ function makeGraphs(error, movesData) {
   stackedChart
     .width(650)
     .height(450)
-    .dimension(province_dim)
+    .dimension(ageGroup_dim)
     .group(occupationSchool, "School")
     .stack(occupationDesign, "Design")
     .stack(occupationTourism, "Tourism")
@@ -237,19 +252,18 @@ function makeGraphs(error, movesData) {
     .stack(occupationRecruitment, "Recruitment")
     .stack(occupationCollege, "College")
     .x(d3.scale.ordinal())
+    .ordinalColors(barColors)
     .xUnits(dc.units.ordinal)
-    .ordering(function(d) { return -d.value; })
-    .legend(dc.legend().x(480).y(70).itemHeight(15).gap(5));
-  stackedChart.margins().top = 60;
-  stackedChart.margins().right = 60;
-  stackedChart.margins().bottom = 100;
-  stackedChart.margins().left = 60;
+    .legend(dc.legend().x(100).y(50).itemHeight(13).gap(5));
+  stackedChart.margins().top = 40;
+  stackedChart.margins().right = 40;
+  stackedChart.margins().bottom = 40;
+  stackedChart.margins().left = 40;
 
 
 
   /* give me all my graphs */
   dc.renderAll();
   
-  console.log(movesData);
   console.log("everything ran");
 }

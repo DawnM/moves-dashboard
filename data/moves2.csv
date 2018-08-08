@@ -1,7 +1,7 @@
-﻿country,province,town,suburb,housing,stage,occupation,months,years
-South Africa,Free State,Welkom,Bedelia,With Mum,Infant,,12,1
-South Africa,Free State,Welkom,Bedelia,With Mum,Infant,,12,1
-South Africa,Free State,Welkom,Riebeekstad,With Mum,Infant,,10,0.833333333
+﻿country,province,town,suburb,housing,age,occupation,months,years
+South Africa,Free State,Welkom,Bedelia,With Mum,Child,,12,1
+South Africa,Free State,Welkom,Bedelia,With Mum,Child,,12,1
+South Africa,Free State,Welkom,Riebeekstad,With Mum,Child,,10,0.833333333
 South Africa,Free State,Welkom,Bedelia,With Mum,Child,School,1,0.083333333
 South Africa,Free State,Welkom,St Helena,With Mum,Child,School,4,0.333333333
 South Africa,Free State,Welkom,Naudeville,With Mum,Child,School,14,1.166666667
@@ -21,22 +21,22 @@ South Africa,Northern Cape,Lime Acres,Lime Acres,Family Other,YoungAdult,Unemplo
 South Africa,Gauteng,Centurion,Lyttelton Manor,Houseshare,YoungAdult,IT Solutions,14,1.166666667
 South Africa,Gauteng,Centurion,Highveld,Family Other,YoungAdult,IT Solutions,16,1.333333333
 South Africa,Western Cape,Knysna,Upper Old Place,Family Other,YoungAdult,Tourism,26,2.166666667
-South Africa,Gauteng,Centurion,Mnandi,Houseshare,Adult,Logistics,11,0.916666667
-South Africa,Limpopo,Mookgopong,Entabeni,Game Reserve,Adult,Tourism,9,0.75
-South Africa,Gauteng,Centurion,Mnandi,Family Other,Adult,Tourism,6,0.5
-United Kingdom,East Sussex,Eastbourne,Upperton,Houseshare,Adult,Social Care,2,0.166666667
-United Kingdom,East Sussex,Eastbourne,Old Town,Rental,Adult,Insurance,16,1.333333333
-United Kingdom,East Sussex,Bexhill,Bexhill-on-Sea,Rental,Adult,Insurance,6,0.5
-South Africa,Gauteng,Johannesburg,Bergbron,With Mum,Adult,Holiday,2,0.166666667
-South Africa,Kwa-Zulu Natal,Westville,Westville,Family Other,Adult,Beauty,6,0.5
-South Africa,Free State,Fiksburg,Fleur de Lis,With Mum,Adult,Family Care,4,0.333333333
-South Africa,Gauteng,Johannesburg,Bergbron,With Mum,Adult,Family Care,4,0.333333333
-South Africa,Western Cape,Cape Town,Brackenfell,Family Other,Adult,Unemployed,3,0.25
-South Africa,Western Cape,Knysna,Hunters Home,Rental,Adult,Retail,5,0.416666667
-South Africa,Western Cape,Cape Town,Brackenfell,Family Other,Adult,Holiday,1,0.083333333
-South Africa,Western Cape,Knysna,Lower Central,Rental,Adult,Insurance,17,1.416666667
-South Africa,Western Cape,Knysna,Lower Old Place,Rental,Adult,Insurance,6,0.5
-South Africa,Western Cape,Knysna,Upper Central,Family Other,Adult,College,13,1.083333333
-United Kingdom,West Midlands,Wolverhampton,Warstones,With Mum,Adult,Recruitment,4,0.333333333
-United Kingdom,West Midlands,Stourbridge,Stourbridge,Houseshare,Adult,College,10,0.833333333
-United Kingdom,West Midlands,Stourbridge,Stourbridge,Rental,Adult,College,3,0.25
+South Africa,Gauteng,Centurion,Mnandi,Houseshare,Adult 26+,Logistics,11,0.916666667
+South Africa,Limpopo,Mookgopong,Entabeni,Game Reserve,Adult 26+,Tourism,9,0.75
+South Africa,Gauteng,Centurion,Mnandi,Family Other,Adult 26+,Tourism,6,0.5
+United Kingdom,East Sussex,Eastbourne,Upperton,Houseshare,Adult 26+,Social Care,2,0.166666667
+United Kingdom,East Sussex,Eastbourne,Old Town,Rental,Adult 26+,Insurance,16,1.333333333
+United Kingdom,East Sussex,Bexhill,Bexhill-on-Sea,Rental,Adult 26+,Insurance,6,0.5
+South Africa,Gauteng,Johannesburg,Bergbron,With Mum,Adult 26+,Holiday,2,0.166666667
+South Africa,Kwa-Zulu Natal,Westville,Westville,Family Other,Adult 26+,Beauty,6,0.5
+South Africa,Free State,Fiksburg,Fleur de Lis,With Mum,Adult 26+,Family Care,4,0.333333333
+South Africa,Gauteng,Johannesburg,Bergbron,With Mum,Adult 26+,Family Care,4,0.333333333
+South Africa,Western Cape,Cape Town,Brackenfell,Family Other,Adult 32+,Unemployed,3,0.25
+South Africa,Western Cape,Knysna,Hunters Home,Rental,Adult 32+,Retail,5,0.416666667
+South Africa,Western Cape,Cape Town,Brackenfell,Family Other,Adult 32+,Holiday,1,0.083333333
+South Africa,Western Cape,Knysna,Lower Central,Rental,Adult 32+,Insurance,17,1.416666667
+South Africa,Western Cape,Knysna,Lower Old Place,Rental,Adult 32+,Insurance,6,0.5
+South Africa,Western Cape,Knysna,Upper Central,Family Other,Adult 32+,College,13,1.083333333
+United Kingdom,West Midlands,Wolverhampton,Warstones,With Mum,Adult 32+,Recruitment,4,0.333333333
+United Kingdom,West Midlands,Stourbridge,Stourbridge,Houseshare,Adult 32+,College,10,0.833333333
+United Kingdom,West Midlands,Stourbridge,Stourbridge,Rental,Adult 32+,College,3,0.25
