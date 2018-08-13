@@ -44,6 +44,11 @@ Web searches and discussions with fellow students were unhelpful, so I turned to
 * [Bootstrap 4.0.0](https://getbootstrap.com/docs/4.0/getting-started/introduction/) - used a free theme
 * [Sublime Text](https://www.sublimetext.com) - text editor
 * [Cloud 9]() - Online IDE
+* [d3.js](https://d3js.org) - Data-Driven Documents
+* [dc.ja](https://dc-js.github.io/dc.js/) - Dimensional Charting Javascript Library
+* [crossfilter.js](http://animateddata.co.uk/articles/crossfilter/) - Multidimensional Filtering Library
+* [queue.js](https://bl.ocks.org/mbostock/1696080) - A library for running asynchronous tasks
+* [Google Maps API](https://cloud.google.com/maps-platform/) - Google product for creating customised maps
 * [favic-o-matic](http://www.favicomatic.com) - automated favicon generation
 * [Adobe Illustrator](https://www.adobe.com/uk/products/illustrator.html?sdid=V6NZKW2K&mv=search&s_kwcid=AL!3085!3!247459081366!b!!g!!%2Billustrator%20%2Badobe&ef_id=WpAeRQAAAIfFvxhn:20180223135933:s) - creating the colour spectrum used on the map lines
 

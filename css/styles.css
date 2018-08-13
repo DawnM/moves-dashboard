@@ -1,11 +1,16 @@
 body {
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
   margin: 6px;
-  font-family: "Neucha", Verdana, Geneva, sans-serif;
+  font-size: 18px;
 }
 
 h1, h2, h3, h4 {
-  font-family: "Cabin Sketch", "Arial Black", Gadget, sans-serif;
+  font-weight: bolder;
+  font-variant: small-caps
+}
+
+h1 {
+  font-size: 1.7em;
 }
 
 #sidebar {
@@ -26,16 +31,29 @@ h1, h2, h3, h4 {
 }
 
 .title {
-  font-family: "Cabin Sketch", cursive;
-  font-size: 1.6rem;
   color: #000;
   text-decoration: none;
 }
 
+.title:hover {
+  color: #20c997;
+  text-decoration: none;
+}
+
+.quote {
+  font-style: italic;
+}
+
+.charts text {
+  font-family: "Muli", Arial, sans-serif;
+  font-size: 1.2em;
+  letter-spacing: 0.05em;
+}
+
 .my-nav {
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
+  /*-webkit-box-orient: vertical;*/
+  /*-webkit-box-direction: normal;*/
   flex-direction: column;
   padding-left: 0;
   margin-bottom: 0;
@@ -52,9 +70,8 @@ h1, h2, h3, h4 {
 }
 
 .my-link:hover {
-  font-size: 1.3rem;
-  text-decoration: underline;
-  color: #fff;
+  color: #20c997;
+  text-decoration: none;
 }
 
 #content {
@@ -71,8 +88,9 @@ h1, h2, h3, h4 {
   margin-bottom: 1rem;
 }
 
-h1 {
-  font-size: 4.2em;
+.row {
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .card {
@@ -98,52 +116,3 @@ div.map {
   min-height: 85vh;
   margin-bottom: 40px;
 }
-
-/* Popup container - adapted from W3Schools tutorial */
-.info-popup {
-    position: relative;
-}
-
-.pointer {
-  cursor: pointer;
-  font-style: italic;
-  text-decoration: underline;
-}
-
-/* The actual popup (appears on top) */
-.info-popup .popuptext {
-    visibility: hidden;
-    width: 460px;
-    background-color: #555;
-    color: #fff;
-    border-radius: 6px;
-    padding: 8px;
-    position: absolute;
-    z-index: 1;
-    left: 33%;
-    bottom: -280px;
-}
-
-/* Toggle this class when clicking on the popup container (hide and show the popup) */
-.info-popup .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s;
-}
-
-/* Add animation (fade in/out the popup) */
-@-webkit-keyframes fadeIn {
-    from {opacity: 0;} 
-    to {opacity: 1;}
-}
-
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity:1 ;}
-}
-
-.close-popup {
-  text-align: right;
-  cursor: pointer;
-}
-

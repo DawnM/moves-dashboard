@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="description" content="Dashboard showing data visualisation of all the times I have moved house">
+  <meta name="description" content="Dashboard showing data visualisation of all the times I have moved house.">
   <meta name="keywords" content="HTML, CSS, JavaScript, d3.js, dc.js, crossfilter.js, google maps APIs">
   <meta name="author" content="DawnM">
 
@@ -18,86 +18,84 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.min.css"/>
 
   <!-- My CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,600" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/styles.css" />
 
   <!-- External Charting JavaScript -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
 
   <!-- My JavaScript -->
-  <script type="text/javascript" src="js/graphs.js"></script>
-  <script type="text/javascript" src="js/main.js"></script>
-
+  <script src="js/graphs.js"></script>
 
   <title>Nomadic Numbers</title>
 </head>
 <body>
   <nav id="sidebar">
-    <p><a class="title" href="#top">Nomadic Numbers</a></p>
+    <h1><a class="title" href="#top">Nomadic Numbers</a></h1>
     <ul class="my-nav">
-      <li><a class="my-link" href="#regional">Regional Charts</a></li>
-      <li><a class="my-link" href="#lifestyles">Lifestyle Charts</a></li>
-      <li><a class="my-link" href="#the-map">Journey Map</a></li>
+      <li><a class="my-link my-link-success" href="#regional">Regional Charts</a></li>
+      <li><a class="my-link my-link-info" href="#lifestyles">Lifestyle Charts</a></li>
+      <li><a class="my-link my-link-warning" href="#the-map">Journey Map</a></li>
     </ul>
-    <div id="per-country-piechart"></div>
+    <div class="charts" id="per-country-piechart"></div>
   </nav>
   <main id="content">
 
-  <!-- explanation of purpose -->
+    <!-- explanation of purpose -->
     <div class="row">
       <div class="jumbotron border-warning col-12">
-        <h1 class="display-3">40 homes in 36 years!</h1>
-        <p class="lead quote"><em class="">"Every day is a journey, and the journey itself is home." &mdash; Matsuo Basho</em></p>
+        <h2 class="display-3">40 homes in 36 years!</h2>
+        <p class="quote">"Every day is a journey, and the journey itself is home." &mdash; Matsuo Basho</p>
         <hr class="my-4">
-        <p>This dashboard illustrates details of the many stopping points along my life's journey.  Click on any chart element to see the <span class="pointer" onclick="popupFunction()">interactivity</span> between all the charts.<br>I was only in Mozambique for 3 weeks, which is too short a time-period to be visible in the carts. However, it is an important part of my story, which is why it is represented on the <a href="#the-map">journey map</a>.</p>
-        <div class="info-popup">
-          <span class="popuptext" id="myInfoPopup"><p>Clicking on any segment of a chart will change the data in all charts to be relevent to the segment that you clicked.</p><p>For example, if you click the "UK" segment in the main pie chart in the sidebar, all other charts will only show data pertinent to my time in the UK.</p><p>Click the same segment again to deselect that data subset, or click additional segments (on the same or other charts) to filter the data further.</p><p class="close-popup"  onclick="popupFunction()">Close</p></span>
-        </div>
+        <p>This dashboard illustrates details of the many stopping points along my life's journey.  Click on any chart element to see the interactivity between all the charts.<br>I was only in Mozambique for 3 weeks, which is too short a time-period to be visible in the carts. However, it is an important part of my story, which is why it is represented on the <a href="#the-map">journey map</a>.</p>
       </div>
     </div>
     
-  <!-- Regional Charts in Years -->
+    <!-- Regional Charts in Years -->
     <div class="row justify-content-center" id="regional">
      <div class="card border-success mb-3 col">
-        <h4 class="card-header">Years per Province</h4>
-        <div id="years-per-province"></div>
+        <h3 class="card-header">I've lived in 9 Provinces,</h3>
+        <div class="charts" id="years-per-province"></div>
       </div>
-
+  
       <div class="card border-success mb-3 col">
-        <h4 class="card-header">Years per Town</h4>
-        <div id="years-per-town"></div>
+        <h3 class="card-header">or 19 Towns,</h3>
+        <div class="charts" id="years-per-town"></div>
       </div>
-
+  
       <div class="card border-success mb-3 col">
-        <h4 class="card-header">Years per Suburb</h4>
-        <div id="years-per-suburb"></div>
+        <h3 class="card-header">or 34 Suburbs!</h3>
+        <div class="charts" id="years-per-suburb"></div>
       </div>
     </div>
 
-  <!-- Age Group Charts -->
+    <!-- Age Group Charts -->
     <div class="row justify-content-center" id="lifestyles">
       <div class="card border-info mb-4 col">
-        <h4 class="card-header">Living Arrangements</h4>
-        <div id="living-arrangements-legend"></div>
-        <div id="living-arrangements"></div>
+        <h3 class="card-header">Living Arrangements</h3>
+        <div class="charts" id="living-arrangements"></div>
       </div>
-
+  
       <div class="card border-info mb-4 col">
-        <h4 class="card-header">Industry Sectors</h4>
-        <div id="industry-sectors"></div>
+        <h3 class="card-header">Industry Sectors</h3>
+        <div class="charts" id="industry-sectors"></div>
       </div>
     </div>
-    
-  <!-- 1 Large Map showing polylines as I moved from one location to the next -->
+      
+    <!-- 1 Large Map showing polylines as I moved from one location to the next -->
     <div class="row justify-content-center" id="the-map">
       <div class="card text-white bg-primary mb-3 col-md-8">
-        <h4 class="card-header">My route so far...</h4>
+        <h3 class="card-header">My route so far...</h3>
         <div class="map" id="routeMap"></div>
       </div>
     </div>
+
   </main>
+  
+  
 
   <script src="js/map.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxNqcerxDysyOonZhRzjVp49mBEEC7tQA&callback=initMap"></script>
