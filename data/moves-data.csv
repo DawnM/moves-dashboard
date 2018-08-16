@@ -1,42 +1,42 @@
-﻿country,province,town,suburb,housing,age,occupation,months,years,coordinates,polygonColors
-South Africa,Free State,Welkom,Bedelia,With Mum,1- Child,,12,1,"{lat: -27.9591844, lng: 26.6020499}",#fb141e
-South Africa,Free State,Welkom,Bedelia,With Mum,1- Child,,12,1,"{lat: -27.9657077, lng: 26.7282434}",#f8221f
-South Africa,Free State,Welkom,Riebeekstad,With Mum,1- Child,,10,0.833333333,"{lat: -27.9257135, lng: 26.7856176}",#f53023
-South Africa,Free State,Welkom,Bedelia,With Mum,1- Child,School,1,0.083333333,"{lat: -27.9805649, lng: 26.6751437}",#f24028
-South Africa,Free State,Welkom,St Helena,With Mum,1- Child,School,4,0.333333333,"{lat: -27.9924853, lng: 26.7007234}",#ef4f2c
-South Africa,Free State,Welkom,Naudeville,With Mum,1- Child,School,14,1.166666667,"{lat: -27.9999838, lng: 26.7060059}",#ef5b30
-South Africa,Free State,Welkom,Flamingo Park,With Mum,1- Child,School,54,4.5,"{lat: -27.9511213, lng: 26.7203248}",#f27c32
-United Kingdom,London,London,New Southgate,With Mum,1- Child,School,3,0.25,"{lat: 51.6109992, lng: -0.1530215}",#f49d36
-United Kingdom,West Midlands,Wolverhampton,Tettenhall Wood,With Mum,1- Child,School,59,4.916666667,"{lat: 52.5937342, lng: -2.1962884}",#f6ba37
-South Africa,Northern Cape,Lime Acres,Lime Acres,With Mum,2- Teen,School,2,0.166666667,"{lat: -28.344533, lng: 23.3745357}",#f9d43a
-South Africa,Northern Cape,Kimberley,Belgravia,Boarding School,2- Teen,School,3,0.25,"{lat: -28.7457787, lng: 24.7675327}",#fbe63d
-South Africa,Northern Cape,Lime Acres,Lime Acres,With Mum,2- Teen,School,25,2.083333333,"{lat: -28.344533, lng: 23.3745357}",#e5e53f
-South Africa,Northern Cape,Kimberley,Monument Heigths,Boarding School,2- Teen,School,11,0.916666667,"{lat: -28.7597236, lng: 24.7535462}",#b1d641
-South Africa,Northern Cape,Lime Acres,Lime Acres,With Mum,2- Teen,College,18,1.5,"{lat: -28.344533, lng: 23.3745357}",#86c945
-South Africa,Kwa-Zulu Natal,Pinetown,New Germany,With Dad,3- YoungAdult,Design,1,0.083333333,"{lat: -29.7987433, lng: 30.8436911}",#63be4a
-South Africa,Kwa-Zulu Natal,Pinetown,Kloof,With Dad,3- YoungAdult,Design,1,0.083333333,"{lat: -29.7820439, lng: 30.7666926}",#4db74e
-South Africa,Kwa-Zulu Natal,Pinetown,Gillets,Houseshare,3- YoungAdult,Design,14,1.166666667,"{lat: -29.7975638, lng: 30.7531501}",#3fb34f
-South Africa,Kwa-Zulu Natal,Ballito,Ballito,Family Other,3- YoungAdult,Tourism,11,0.916666667,"{lat: -29.4874395, lng: 31.1611475}",#3bb178
-South Africa,Northern Cape,Lime Acres,Lime Acres,Family Other,3- YoungAdult,Unemployed,4,0.333333333,"{lat: -28.344533, lng: 23.3745357}",#38afa1
-South Africa,Gauteng,Centurion,Lyttelton Manor,Houseshare,3- YoungAdult,IT Solutions,14,1.166666667,"{lat: -25.830588, lng: 28.1895729}",#36adbf
-South Africa,Gauteng,Centurion,Highveld,Family Other,3- YoungAdult,IT Solutions,16,1.333333333,"{lat: -25.8789339, lng: 28.1763935}",#34add3
-South Africa,Western Cape,Knysna,Upper Old Place,Family Other,3- YoungAdult,Tourism,26,2.166666667,"{lat: -34.0397171, lng: 23.0605693}",#33acde
-South Africa,Gauteng,Centurion,Mnandi,Houseshare,4- Adult 26+,Logistics,11,0.916666667,"{lat: -25.8869328, lng: 28.05513}",#2da5db
-South Africa,Limpopo,Mookgopong,Entabeni,Game Reserve,4- Adult 26+,Tourism,9,0.75,"{lat: -24.1780957, lng: 28.6213679}",#2290cd
-South Africa,Gauteng,Centurion,Mnandi,Family Other,4- Adult 26+,Tourism,6,0.5,"{lat: -22.132292, lng: 35.441386}",#1981c3
-United Kingdom,East Sussex,Eastbourne,Upperton,Houseshare,4- Adult 26+,Social Care,2,0.166666667,"{lat: -25.8869328, lng: 28.05513}",#1479bd
-United Kingdom,East Sussex,Eastbourne,Old Town,Rental,4- Adult 26+,Insurance,16,1.333333333,"{lat: 50.7730802, lng: 0.2642302}",#1374ba
-United Kingdom,East Sussex,Bexhill,Bexhill-on-Sea,Rental,4- Adult 26+,Insurance,6,0.5,"{lat: 50.7722255, lng: 0.2456059}",#0f74b9
-South Africa,Gauteng,Johannesburg,Bergbron,With Mum,4- Adult 26+,Holiday,2,0.166666667,"{lat: 50.8376962, lng: 0.4432705}",#11539c
-South Africa,Kwa-Zulu Natal,Westville,Westville,Family Other,4- Adult 26+,Beauty,6,0.5,"{lat: -26.1650691, lng: 27.9433273}",#15357f
-South Africa,Free State,Fiksburg,Fleur de Lis,With Mum,4- Adult 26+,Family Care,4,0.333333333,"{lat: -29.8311422, lng: 30.8912992}",#18236e
-South Africa,Gauteng,Johannesburg,Bergbron,With Mum,4- Adult 26+,Family Care,4,0.333333333,"{lat: -28.799218, lng: 27.79775}",#1a1b65
-South Africa,Western Cape,Cape Town,Brackenfell,Family Other,5- Adult 32+,Unemployed,3,0.25,"{lat: -26.1650691, lng: 27.9433273}",#1b1862
-South Africa,Western Cape,Knysna,Hunters Home,Rental,5- Adult 32+,Retail,5,0.416666667,"{lat: -33.876401, lng: 18.6661407}",#2f1964
-South Africa,Western Cape,Cape Town,Brackenfell,Family Other,5- Adult 32+,Holiday,1,0.083333333,"{lat: -34.0584767, lng: 23.062194}",#8e1f6f
-South Africa,Western Cape,Knysna,Lower Central,Rental,5- Adult 32+,Insurance,17,1.416666667,"{lat: -33.876401, lng: 18.6661407}",#c62375
-South Africa,Western Cape,Knysna,Lower Old Place,Rental,5- Adult 32+,Insurance,6,0.5,"{lat: -34.0368278, lng: 23.0473077}",#e02577
-South Africa,Western Cape,Knysna,Upper Central,Family Other,5- Adult 32+,College,13,1.083333333,"{lat: -34.0437721, lng: 23.0702642}",#e7257a
-United Kingdom,West Midlands,Wolverhampton,Warstones,With Mum,5- Adult 32+,Recruitment,4,0.333333333,"{lat: -34.0348609, lng: 23.04487}",#ea257a
-United Kingdom,West Midlands,Stourbridge,Stourbridge,Houseshare,5- Adult 32+,College,10,0.833333333,"{lat: 52.5685395, lng: -2.1677645}",#b03f71
-United Kingdom,West Midlands,Stourbridge,Stourbridge,Rental,5- Adult 32+,College,3,0.25,"{lat: 52.4590004, lng: -2.2185321}",
+﻿country,province,town,suburb,housing,age,occupation,months,years
+South Africa,Free State,Welkom,Bedelia,With Mum,1- Child,,12,1
+South Africa,Free State,Welkom,Bedelia,With Mum,1- Child,,12,1
+South Africa,Free State,Welkom,Riebeekstad,With Mum,1- Child,,10,0.85
+South Africa,Free State,Welkom,Bedelia,With Mum,1- Child,School,1,0.09
+South Africa,Free State,Welkom,St Helena,With Mum,1- Child,School,4,0.33
+South Africa,Free State,Welkom,Naudeville,With Mum,1- Child,School,14,1.17
+South Africa,Free State,Welkom,Flamingo Park,With Mum,1- Child,School,54,4.5
+United Kingdom,London,London,New Southgate,With Mum,1- Child,School,3,0.25
+United Kingdom,West Midlands,Wolverhampton,Tettenhall Wood,With Mum,1- Child,School,59,4.92
+South Africa,Northern Cape,Lime Acres,Lime Acres,With Mum,2- Teen,School,2,0.17
+South Africa,Northern Cape,Kimberley,Belgravia,Boarding School,2- Teen,School,3,0.25
+South Africa,Northern Cape,Lime Acres,Lime Acres,With Mum,2- Teen,School,25,2.08
+South Africa,Northern Cape,Kimberley,Monument Heigths,Boarding School,2- Teen,School,11,0.92
+South Africa,Northern Cape,Lime Acres,Lime Acres,With Mum,2- Teen,College,18,1.5
+South Africa,Kwa-Zulu Natal,Pinetown,New Germany,With Dad,3- Young Adult,Design,1,0.08
+South Africa,Kwa-Zulu Natal,Pinetown,Kloof,With Dad,3- Young Adult,Design,1,0.08
+South Africa,Kwa-Zulu Natal,Pinetown,Gillets,Houseshare,3- Young Adult,Design,14,1.17
+South Africa,Kwa-Zulu Natal,Ballito,Ballito,Family Other,3- Young Adult,Tourism,11,0.92
+South Africa,Northern Cape,Lime Acres,Lime Acres,Family Other,3- Young Adult,Unemployed,4,0.33
+South Africa,Gauteng,Centurion,Lyttelton Manor,Houseshare,3- Young Adult,IT Solutions,14,1.17
+South Africa,Gauteng,Centurion,Highveld,Family Other,3- Young Adult,IT Solutions,16,1.33
+South Africa,Western Cape,Knysna,Upper Old Place,Family Other,3- Young Adult,Tourism,26,2.17
+South Africa,Gauteng,Centurion,Mnandi,Houseshare,4- Adult 26+,Logistics,11,0.92
+South Africa,Limpopo,Mookgopong,Entabeni,Game Reserve,4- Adult 26+,Tourism,9,0.75
+South Africa,Gauteng,Centurion,Mnandi,Family Other,4- Adult 26+,Tourism,6,0.5
+United Kingdom,East Sussex,Eastbourne,Upperton,Houseshare,4- Adult 26+,Social Care,2,0.17
+United Kingdom,East Sussex,Eastbourne,Old Town,Rental,4- Adult 26+,Insurance,16,1.33
+United Kingdom,East Sussex,Bexhill,Bexhill-on-Sea,Rental,4- Adult 26+,Insurance,6,0.5
+South Africa,Gauteng,Johannesburg,Bergbron,With Mum,4- Adult 26+,Holiday,2,0.17
+South Africa,Kwa-Zulu Natal,Westville,Westville,Family Other,4- Adult 26+,Beauty,6,0.5
+South Africa,Free State,Fiksburg,Fleur de Lis,With Mum,4- Adult 26+,Family Care,4,0.33
+South Africa,Gauteng,Johannesburg,Bergbron,With Mum,4- Adult 26+,Family Care,4,0.33
+South Africa,Western Cape,Cape Town,Brackenfell,Family Other,5- Adult 32+,Unemployed,3,0.25
+South Africa,Western Cape,Knysna,Hunters Home,Rental,5- Adult 32+,Retail,5,0.42
+South Africa,Western Cape,Cape Town,Brackenfell,Family Other,5- Adult 32+,Holiday,1,0.08
+South Africa,Western Cape,Knysna,Lower Central,Rental,5- Adult 32+,Insurance,17,1.42
+South Africa,Western Cape,Knysna,Lower Old Place,Rental,5- Adult 32+,Insurance,6,0.5
+South Africa,Western Cape,Knysna,Upper Central,Family Other,5- Adult 32+,College,13,1.08
+United Kingdom,West Midlands,Wolverhampton,Warstones,With Mum,5- Adult 32+,Recruitment,4,0.33
+United Kingdom,West Midlands,Stourbridge,Stourbridge,Houseshare,5- Adult 32+,College,10,0.83
+United Kingdom,West Midlands,Stourbridge,Stourbridge,Rental,5- Adult 32+,College,3,0.25

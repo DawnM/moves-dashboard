@@ -16,6 +16,7 @@
   <!-- External CSS -->
   <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/introjs.min.css" />
 
   <!-- My CSS -->
   <link href="https://fonts.googleapis.com/css?family=Muli:400,600" rel="stylesheet">
@@ -27,6 +28,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  
+  <!-- External Intro JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/intro.min.js"></script>
+  
 
   <!-- My JavaScript -->
   <script src="js/graphs.js"></script>
@@ -41,18 +46,20 @@
       <li><a class="my-link" href="#lifestyles">Lifestyle Charts</a></li>
       <li><a class="my-link" href="#the-map">Journey Map</a></li>
     </ul>
-    <div class="centre" id="per-country-piechart1"></div>
+    <div class="centre" id="per-country-piechart1" data-intro="This is the main pie chart, showing that I have lived in 2 different countries.  Each segment can be clicked to show or hide the data for that country. <br>All segments and bars depict the total years for that category." data-step="1" data-position="right"></div>
+    <button class="btn btn-lrg chart-reset" onclick="location.reload();">Reset Charts!</button>
   </nav>
   <div class="white">
     <nav class="mobile">
       <div class="horizontal-nav">
-        <h1><a class="title" href="#top">Nomadic Numbers</a></h1>
         <ul class="my-nav">
           <li><a class="my-link" href="#regional">Regional Charts</a></li>
           <li><a class="my-link" href="#lifestyles">Lifestyle Charts</a></li>
           <li><a class="my-link" href="#the-map">Journey Map</a></li>
         </ul>
+        <button class="btn btn-lrg chart-reset" onclick="location.reload();">Reset Charts!</button>
       </div>
+      <h1><a class="title" href="#top">Nomadic Numbers</a></h1>
       <div class="" id="per-country-piechart2"></div>
     </nav>
   </div>
@@ -61,14 +68,14 @@
     <!-- explanation of dashboard purpose -->
     <div id="welcome">
       <div class="jumbotron border-warning mb-3 col-12">
-        <h2>40 homes in 36 years!</h2>
+        <h2>40 homes in 36 years!</h2><a class="intro-btn btn btn-lrg float-right" href="javascript:void(0);" onclick="javascript:introJs().start();">Step-by-Step Guide</a>
         <p class="quote">"Every day is a journey, and the journey itself is home." &mdash; Matsuo Basho</p>
-        <p>This dashboard illustrates details of the many stopping points along my life's journey.  Click on any chart element to see the interactivity between all the charts.<br>I was only in Mozambique for 3 weeks, which is too short a time-period to be visible in the carts. However, it is an important part of my story, which is why it is represented on the <a href="#the-map">journey map</a>.</p>
+        <p>This dashboard illustrates details of the many stopping points along my life's journey.  Click on any chart element to see the interactivity between all the charts.<br>I was only in Mozambique for 3 weeks, which is too short a time-period to be visible in the charts. However, it is an important part of my story, which is why it is represented on the <a class="inline-link" href="#the-map">journey map</a>.</p>
       </div>
     </div>
     
     <!-- Regional Charts in Years -->
-    <div class="flex-row flex-wrap" id="regional">
+    <div class="flex-row flex-wrap" id="regional"  data-intro="These pie charts illustrate the total number of provinces, towns, and suburbs I have lived in. <br>As there are so many moves, individual names are not visible. <br>However, the piecharts do give a visual comparison for the totals in each category. <br>The slices of these pies can also be clicked to show or hide their relevant data on the other charts." data-step="2" data-position="left">
      <div class="card border-success m-3 p-2">
         <h3 class="card-header">9 Provinces</h3>
         <div class="charts" id="years-per-province"></div>
@@ -86,7 +93,7 @@
     </div>
 
     <!-- Age Group Charts -->
-    <div class="flex-row flex-wrap" id="lifestyles">
+    <div class="flex-row flex-wrap" id="lifestyles" data-intro="These bar charts show changes in who I lived with, or what industry I was working in, according to my age group. <br>They are affected by any pie slices that may have been clicked. <br>Additionally, a bar can be clicked, and the pies will show geographical data according to the age group represented by that bar." data-step="3" data-position="left">
       <div class="card border-info m-3 p-2">
         <h3 class="card-header">Living Arrangements</h3>
         <div class="charts" id="living-arrangements"></div>
@@ -99,7 +106,7 @@
     </div>
       
     <!-- 1 Large Map showing polylines as I moved from one location to the next -->
-    <div id="the-map">
+    <div id="the-map"  data-intro="The lines on this map run through a rainbow colour spectrum, starting with red at my very first home, and ending in purple at the latest.  <br>It is focused on Southern Africa, as that is where my journey began. <br>It also shows the holiday in Mozambique mentioned at the top of the page. <br>If you zoom out or pan on the map, you will see how the lines show my travels to the UK as well." data-step="4" data-position="left">
       <div class="card text-white bg-primary m-3 p-2">
         <h3 class="card-header">My route so far...</h3>
         <div class="map" id="routeMap"></div>
