@@ -1,3 +1,7 @@
+:root {
+    --link: #BCBDDC;
+}
+  
 body {
   letter-spacing: 0.1em;
   margin: 6px;
@@ -45,6 +49,17 @@ h2 {
   text-decoration: none;
 }
 
+.intro-btn {
+  background-color: var(--link);
+}
+
+.chart-reset {
+  letter-spacing: 0.2em;
+  background-color: var(--link);
+  margin: 10vh 0 0 1.5vw ;
+  border: 1px solid black;
+}
+
 .quote {
   font-style: italic;
 }
@@ -73,8 +88,8 @@ h2 {
   text-decoration: none;
 }
 
-.title:hover, .my-link:hover {
-  color: #20c997;
+.title:hover, .my-link:hover, .inline-link:hover {
+  color: var(--link);
   text-decoration: none;
 }
 
@@ -164,7 +179,15 @@ div.map {
     color: #fff;
     text-decoration: none;
   }
-    
+  
+  .chart-reset {
+    margin: 1em 0 0 1em;
+  }
+  
+  .intro-btn {
+    display: none;
+  }
+
   main {
     margin: 220px auto 0 auto;
   }
