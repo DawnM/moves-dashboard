@@ -1,22 +1,37 @@
 body {
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
   margin: 6px;
-  font-family: "Neucha", Verdana, Geneva, sans-serif;
+  font-size: 18px;
 }
 
-h1, h2, h3, h4 {
-  font-family: "Cabin Sketch", "Arial Black", Gadget, sans-serif;
+.mobile {
+  display: none;
+}
+
+/*large left margin to accomodate sidenav*/
+main {
+  margin-left: 18vw;
+  margin-right: 2vw;
+}
+
+/* Main site title is in the nav, so h1 used for good semantics, but needs to be smaller */
+h1 {
+  font-size: 1.7em;
+}
+
+/* Large title at top of page to emphasise quantity of moves  */
+h2 {
+  font-size: 4em;
 }
 
 #sidebar {
   height: 97vh;
-  width: 17vw;
+  width: 16vw;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
   overflow-x: hidden; /* Disables horizontal scroll */
-
   background-color: #868e96;
   border-width: 2px;
   border-style: solid;
@@ -26,16 +41,23 @@ h1, h2, h3, h4 {
 }
 
 .title {
-  font-family: "Cabin Sketch", cursive;
-  font-size: 1.6rem;
   color: #000;
   text-decoration: none;
 }
 
+.quote {
+  font-style: italic;
+}
+
+/* user testing indicated body font was not clear enough on charts */
+.charts text {
+  font-family: "Muli", Arial, sans-serif;
+  font-size: 1.2em;
+  letter-spacing: 0.05em;
+}
+
 .my-nav {
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
   flex-direction: column;
   padding-left: 0;
   margin-bottom: 0;
@@ -51,15 +73,9 @@ h1, h2, h3, h4 {
   text-decoration: none;
 }
 
-.my-link:hover {
-  font-size: 1.3rem;
-  text-decoration: underline;
-  color: #fff;
-}
-
-#content {
-  margin-left: 20vw;
-  margin-right: 2vw;
+.title:hover, .my-link:hover {
+  color: #20c997;
+  text-decoration: none;
 }
 
 .quote {
@@ -68,30 +84,37 @@ h1, h2, h3, h4 {
 
 .jumbotron {
   padding: 2rem 1rem;
-  margin-bottom: 1rem;
-}
-
-h1 {
-  font-size: 4.2em;
-}
-
-.card {
-  margin: 0 1rem;
 }
 
 .card-header {
   background-color: transparent;
 }
 
-.hint {
-  font-size: 0.7em;
-  font-style: italic;
-}
-
-#per-country-piechart > svg {
+#per-country-piechart1 {
   width: 15vw;
   display: block;
   margin-top: 10vh;
+  margin-left: 1.5vw;
+}
+
+#regional, #lifestyles {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  flex-grow: 1;
+}
+
+.charts {
+  margin: 0 auto 0 auto;
+}
+
+#the-map {
+  max-width: 60vw;
+  margin: 0 auto 0 auto;
 }
 
 div.map {
@@ -99,51 +122,62 @@ div.map {
   margin-bottom: 40px;
 }
 
-/* Popup container - adapted from W3Schools tutorial */
-.info-popup {
-    position: relative;
+@media (max-width: 1555px) {
+  #per-country-piechart1 {
+    margin-left: 0vw;
+  }
 }
-
-.pointer {
-  cursor: pointer;
-  font-style: italic;
-  text-decoration: underline;
-}
-
-/* The actual popup (appears on top) */
-.info-popup .popuptext {
-    visibility: hidden;
-    width: 460px;
-    background-color: #555;
-    color: #fff;
-    border-radius: 6px;
-    padding: 8px;
-    position: absolute;
+  
+/*move nav from sidebar position to top on small devices*/
+@media (max-width: 1370px) {
+  .desktop {
+    display: none;
+  }
+  
+  .white {
+    display: block;
+    background-color: white;
+    position: fixed;
     z-index: 1;
-    left: 33%;
-    bottom: -280px;
+    top: 0;
+    left: 0;
+    overflow-x: hidden; /* Disables horizontal scroll */
+  }
+  
+  .mobile {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    height: 200px;
+    width: 99vw;
+    background-color: #868e96;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 25px 25px 55px 5px/5px 55px 25px 25px;
+    margin: 1vh;
+    padding: 1vh; 
+  }
+  
+  .my-link {
+    display: block;
+    padding: 0.1rem 1rem;
+    color: #fff;
+    text-decoration: none;
+  }
+    
+  main {
+    margin: 220px auto 0 auto;
+  }
 }
 
-/* Toggle this class when clicking on the popup container (hide and show the popup) */
-.info-popup .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s;
-}
+@media (max-width: 1100px) {
+  #the-map {
+    max-width: 85vw;
+    margin: 0 auto 0 auto;
+  }
 
-/* Add animation (fade in/out the popup) */
-@-webkit-keyframes fadeIn {
-    from {opacity: 0;} 
-    to {opacity: 1;}
+  div.map {
+    height: 85vh;
+    margin-bottom: 40px;
+  }
 }
-
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity:1 ;}
-}
-
-.close-popup {
-  text-align: right;
-  cursor: pointer;
-}
-
