@@ -11,14 +11,29 @@ function makeGraphs(error, movesData) {
   
   var ndx = crossfilter(movesData);
   
-  /* main pie chart (in nav) showing years per country */
+  /* main pie chart (in SIDEBAR nav - avoids duplicate ID issue) showing years per country */
   var country_dim = ndx.dimension(dc.pluck('country'));
   var years_per_country = country_dim.group().reduceSum(dc.pluck('years'));
-  var countryPie = dc.pieChart('#per-country-piechart');
+  var countryPie = dc.pieChart('#per-country-piechart1');
   
   countryPie
-    .height(250)
-    .radius(120)
+    .height(200)
+    .width(200)
+    .radius(100)
+    .transitionDuration(1500)
+    .dimension(country_dim)
+    .group(years_per_country)
+    .colors(countryColors);
+    
+  /* main pie chart (in TOP nav - avoids duplicate ID issue) showing years per country */
+  var country_dim = ndx.dimension(dc.pluck('country'));
+  var years_per_country = country_dim.group().reduceSum(dc.pluck('years'));
+  var countryPie = dc.pieChart('#per-country-piechart2');
+  
+  countryPie
+    .height(180)
+    .width(180)
+    .radius(100)
     .transitionDuration(1500)
     .dimension(country_dim)
     .group(years_per_country)

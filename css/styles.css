@@ -4,46 +4,14 @@ body {
   font-size: 18px;
 }
 
+.mobile {
+  display: none;
+}
+
 /*large left margin to accomodate sidenav*/
 main {
   margin-left: 18vw;
   margin-right: 2vw;
-  display: grid;
-  grid-template-areas: 
-    "welcome welcome welcome welcome welcome welcome"
-    "region1 region1 region2 region2 region3 region3"
-    "lifestyle1 lifestyle1 lifestyle1 lifestyle2 lifestyle2 lifestyle2"
-    ". map map map map .";
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-}
-
-#welcome {
-  grid-area: welcome;
-}
-
-#regional-chart-1 {
-  grid-area: region1;
-}
-
-#regional-chart-2 {
-  grid-area: region2;
-}
-
-#regional-chart-3 {
-  grid-area: region3;
-}
-
-#lifestyle-chart-1 {
-  grid-area: lifestyle1;
-}
-
-#lifestyle-chart-2 {
-  grid-area: lifestyle2;
-}
-
-#the-map {
-  grid-area: map;
 }
 
 /* Main site title is in the nav, so h1 used for good semantics, but needs to be smaller */
@@ -122,13 +90,94 @@ h2 {
   background-color: transparent;
 }
 
-#per-country-piechart > svg {
+#per-country-piechart1 {
   width: 15vw;
   display: block;
   margin-top: 10vh;
+  margin-left: 1.5vw;
+}
+
+#regional, #lifestyles {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  flex-grow: 1;
+}
+
+.charts {
+  margin: 0 auto 0 auto;
+}
+
+#the-map {
+  max-width: 60vw;
+  margin: 0 auto 0 auto;
 }
 
 div.map {
   min-height: 85vh;
   margin-bottom: 40px;
+}
+
+@media (max-width: 1555px) {
+  #per-country-piechart1 {
+    margin-left: 0vw;
+  }
+}
+  
+/*move nav from sidebar position to top on small devices*/
+@media (max-width: 1370px) {
+  .desktop {
+    display: none;
+  }
+  
+  .white {
+    display: block;
+    background-color: white;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden; /* Disables horizontal scroll */
+  }
+  
+  .mobile {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    height: 200px;
+    width: 99vw;
+    background-color: #868e96;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 25px 25px 55px 5px/5px 55px 25px 25px;
+    margin: 1vh;
+    padding: 1vh; 
+  }
+  
+  .my-link {
+    display: block;
+    padding: 0.1rem 1rem;
+    color: #fff;
+    text-decoration: none;
+  }
+    
+  main {
+    margin: 220px auto 0 auto;
+  }
+}
+
+@media (max-width: 1100px) {
+  #the-map {
+    max-width: 85vw;
+    margin: 0 auto 0 auto;
+  }
+
+  div.map {
+    height: 85vh;
+    margin-bottom: 40px;
+  }
 }
