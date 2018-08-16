@@ -19,7 +19,9 @@ This website was initally created in Sublime Text, and then migrated to Cloud 9 
 
 ## Testing
 
-Due to the nature of the charts, there was no automated testing other than what comes built into the Chrome browser developer tools.  I found this sufficiently helpful in correcting any errors in my javascript syntax during development.
+* W3C validators for my HTML and CSS.
+* Family & ellow students for general opinions on readability.
+* Due to the nature of the charts, there was no automated testing other than what comes built into the Chrome browser developer tools.  I found this sufficiently helpful in correcting any errors in my javascript syntax during development.
 
 ### Devices:
 
@@ -45,9 +47,10 @@ Web searches and discussions with fellow students were unhelpful, so I turned to
 * [Sublime Text](https://www.sublimetext.com) - text editor
 * [Cloud 9]() - Online IDE
 * [d3.js](https://d3js.org) - Data-Driven Documents
-* [dc.ja](https://dc-js.github.io/dc.js/) - Dimensional Charting Javascript Library
+* [dc.js](https://dc-js.github.io/dc.js/) - Dimensional Charting Javascript Library
 * [crossfilter.js](http://animateddata.co.uk/articles/crossfilter/) - Multidimensional Filtering Library
 * [queue.js](https://bl.ocks.org/mbostock/1696080) - A library for running asynchronous tasks
+* [intro.js](https://introjs.com/) - A library for step-by-step guides and feature introduction, used to provide information about the dashboard without cluttering the charts
 * [Google Maps API](https://cloud.google.com/maps-platform/) - Google product for creating customised maps
 * [favic-o-matic](http://www.favicomatic.com) - automated favicon generation
 * [Adobe Illustrator](https://www.adobe.com/uk/products/illustrator.html?sdid=V6NZKW2K&mv=search&s_kwcid=AL!3085!3!247459081366!b!!g!!%2Billustrator%20%2Badobe&ef_id=WpAeRQAAAIfFvxhn:20180223135933:s) - creating the colour spectrum used on the map lines
@@ -56,7 +59,7 @@ Web searches and discussions with fellow students were unhelpful, so I turned to
 
 No contributors are permitted as the purpose of the site is to showcase my personal coding proficiency.
 
-## Versioning
+## Version Control
 
 I use [GitHub](https://github.com) for versioning. For the versions available, see my [moves-dashboard repo](https://github.com/DawnM/moves-dashboard). 
 
@@ -68,3 +71,4 @@ I use [GitHub](https://github.com) for versioning. For the versions available, s
 
 * Yoni Lavi, my Code Institute mentor.
 * Online query solutions as credited in the comments at the relevent points in my code.
+* Coralize, for her proof reading skills and all-round support.

@@ -15,7 +15,7 @@
 
   <!-- External CSS -->
   <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.min.css"/>
 
   <!-- My CSS -->
   <link href="https://fonts.googleapis.com/css?family=Muli:400,600" rel="stylesheet">
@@ -36,58 +36,57 @@
   <nav id="sidebar">
     <h1><a class="title" href="#top">Nomadic Numbers</a></h1>
     <ul class="my-nav">
-      <li><a class="my-link my-link-success" href="#regional">Regional Charts</a></li>
-      <li><a class="my-link my-link-info" href="#lifestyles">Lifestyle Charts</a></li>
-      <li><a class="my-link my-link-warning" href="#the-map">Journey Map</a></li>
+      <li><a class="my-link" href="#regional">Regional Charts</a></li>
+      <li><a class="my-link" href="#lifestyles">Lifestyle Charts</a></li>
+      <li><a class="my-link" href="#the-map">Journey Map</a></li>
     </ul>
-    <div class="charts" id="per-country-piechart"></div>
+    <div class="" id="per-country-piechart"></div>
   </nav>
   <main id="content">
 
-    <!-- explanation of purpose -->
-    <div class="row">
-      <div class="jumbotron border-warning col-12">
-        <h2 class="display-3">40 homes in 36 years!</h2>
+    <!-- explanation of dashboard purpose -->
+    <div id="welcome">
+      <div class="jumbotron border-warning mb-3 col-12">
+        <h2>40 homes in 36 years!</h2>
         <p class="quote">"Every day is a journey, and the journey itself is home." &mdash; Matsuo Basho</p>
-        <hr class="my-4">
         <p>This dashboard illustrates details of the many stopping points along my life's journey.  Click on any chart element to see the interactivity between all the charts.<br>I was only in Mozambique for 3 weeks, which is too short a time-period to be visible in the carts. However, it is an important part of my story, which is why it is represented on the <a href="#the-map">journey map</a>.</p>
       </div>
     </div>
     
     <!-- Regional Charts in Years -->
-    <div class="row justify-content-center" id="regional">
-     <div class="card border-success mb-3 col">
+    <div id="regional">
+     <div id="regional-chart-1" class="card border-success m-3 p-2">
         <h3 class="card-header">I've lived in 9 Provinces,</h3>
         <div class="charts" id="years-per-province"></div>
       </div>
   
-      <div class="card border-success mb-3 col">
+      <div id="regional-chart-2" class="card border-success m-3 p-2">
         <h3 class="card-header">or 19 Towns,</h3>
         <div class="charts" id="years-per-town"></div>
       </div>
   
-      <div class="card border-success mb-3 col">
+      <div id="regional-chart-3" class="card border-success m-3 p-2">
         <h3 class="card-header">or 34 Suburbs!</h3>
         <div class="charts" id="years-per-suburb"></div>
       </div>
     </div>
 
     <!-- Age Group Charts -->
-    <div class="row justify-content-center" id="lifestyles">
-      <div class="card border-info mb-4 col">
+    <div id="lifestyles"> <!-- class="row flex-row flex-wrap" -->
+      <div id="lifestyle-chart-1" class="card border-info m-3 p-2">
         <h3 class="card-header">Living Arrangements</h3>
         <div class="charts" id="living-arrangements"></div>
       </div>
   
-      <div class="card border-info mb-4 col">
+      <div id="lifestyle-chart-2" class="card border-info m-3 p-2">
         <h3 class="card-header">Industry Sectors</h3>
         <div class="charts" id="industry-sectors"></div>
       </div>
     </div>
       
     <!-- 1 Large Map showing polylines as I moved from one location to the next -->
-    <div class="row justify-content-center" id="the-map">
-      <div class="card text-white bg-primary mb-3 col-md-8">
+    <div id="the-map">
+      <div class="card text-white bg-primary m-3 p-2">
         <h3 class="card-header">My route so far...</h3>
         <div class="map" id="routeMap"></div>
       </div>

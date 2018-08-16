@@ -1,5 +1,5 @@
 queue()
-  .defer(d3.csv, "data/moves2.csv")
+  .defer(d3.csv, "data/moves-data.csv")
   .await(makeGraphs);
 
 function makeGraphs(error, movesData) {
@@ -11,10 +11,12 @@ function makeGraphs(error, movesData) {
   
   var ndx = crossfilter(movesData);
   
-  /* main pie chart showing years per country */
+  /* main pie chart (in nav) showing years per country */
   var country_dim = ndx.dimension(dc.pluck('country'));
   var years_per_country = country_dim.group().reduceSum(dc.pluck('years'));
-  dc.pieChart('#per-country-piechart')
+  var countryPie = dc.pieChart('#per-country-piechart');
+  
+  countryPie
     .height(250)
     .radius(120)
     .transitionDuration(1500)
@@ -25,7 +27,9 @@ function makeGraphs(error, movesData) {
   /* pie chart showing years per province */
   var province_dim = ndx.dimension(dc.pluck('province'));
   var years_per_province = province_dim.group().reduceSum(dc.pluck('years'));
-  dc.pieChart("#years-per-province")
+  var provincesPie = dc.pieChart("#years-per-province");
+  
+  provincesPie
     .height(330)
     .radius(150)
     .transitionDuration(1500)
@@ -36,7 +40,9 @@ function makeGraphs(error, movesData) {
   /* pie chart showing years per town */
   var town_dim = ndx.dimension(dc.pluck('town'));
   var years_per_town = town_dim.group().reduceSum(dc.pluck('years'));
-  dc.pieChart("#years-per-town")
+  var townsPie = dc.pieChart("#years-per-town");
+  
+  townsPie
     .height(330)
     .radius(150)
     .transitionDuration(1500)
@@ -46,7 +52,9 @@ function makeGraphs(error, movesData) {
   /* pie chart showing years per suburb */
   var suburb_dim = ndx.dimension(dc.pluck('suburb'));
   var years_per_suburb = suburb_dim.group().reduceSum(dc.pluck('years'));
-  dc.pieChart("#years-per-suburb")
+  var suburbsPie = dc.pieChart("#years-per-suburb");
+  
+  suburbsPie
     .height(330)
     .radius(150)
     .transitionDuration(1500)
@@ -113,8 +121,8 @@ function makeGraphs(error, movesData) {
     }
   });
         
-  var stackedChart = dc.barChart("#living-arrangements");
-  stackedChart
+  var housingStackedChart = dc.barChart("#living-arrangements");
+  housingStackedChart
     .width(650)
     .height(450)
     .dimension(ageGroup_dim)
@@ -128,12 +136,11 @@ function makeGraphs(error, movesData) {
     .x(d3.scale.ordinal())
     .xUnits(dc.units.ordinal)
     .ordinalColors(barColors)
-    .legend(dc.legend().x(500).y(30).itemHeight(13).gap(5))
-    .ordering(dc.pluck('age'));
-  stackedChart.margins().top = 40;
-  stackedChart.margins().right = 40;
-  stackedChart.margins().bottom = 40;
-  stackedChart.margins().left = 40;
+    .legend(dc.legend().x(500).y(30).itemHeight(13).gap(5));
+  housingStackedChart.margins().top = 40;
+  housingStackedChart.margins().right = 40;
+  housingStackedChart.margins().bottom = 40;
+  housingStackedChart.margins().left = 40;
   
   /* stacked bar chart showing employment industry per age group */
   /* ageGroup_dim already declared */
@@ -227,8 +234,8 @@ function makeGraphs(error, movesData) {
     }
   });
         
-  var stackedChart = dc.barChart("#industry-sectors");
-  stackedChart
+  var occupationStackedChart = dc.barChart("#industry-sectors");
+  occupationStackedChart
     .width(650)
     .height(450)
     .dimension(ageGroup_dim)
@@ -246,12 +253,11 @@ function makeGraphs(error, movesData) {
     .x(d3.scale.ordinal())
     .ordinalColors(barColors)
     .xUnits(dc.units.ordinal)
-    .legend(dc.legend().x(500).y(30).itemHeight(13).gap(5))
-    .ordering(dc.pluck('age'));
-  stackedChart.margins().top = 40;
-  stackedChart.margins().right = 40;
-  stackedChart.margins().bottom = 40;
-  stackedChart.margins().left = 40;
+    .legend(dc.legend().x(500).y(30).itemHeight(13).gap(5));
+  occupationStackedChart.margins().top = 40;
+  occupationStackedChart.margins().right = 40;
+  occupationStackedChart.margins().bottom = 40;
+  occupationStackedChart.margins().left = 40;
 
 
 
