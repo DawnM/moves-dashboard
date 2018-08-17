@@ -8,16 +8,6 @@ body {
   font-size: 18px;
 }
 
-.mobile {
-  display: none;
-}
-
-/*large left margin to accomodate sidenav*/
-main {
-  margin-left: 18vw;
-  margin-right: 2vw;
-}
-
 /* Main site title is in the nav, so h1 used for good semantics, but needs to be smaller */
 h1 {
   font-size: 1.7em;
@@ -26,6 +16,10 @@ h1 {
 /* Large title at top of page to emphasise quantity of moves  */
 h2 {
   font-size: 4em;
+}
+
+.mobile {
+  display: none;
 }
 
 #sidebar {
@@ -44,13 +38,29 @@ h2 {
   padding: 1vh; 
 }
 
+.my-nav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  font-size: 1.2em;
+}
+
 .title {
   color: #000;
   text-decoration: none;
 }
 
-.intro-btn {
-  background-color: var(--link);
+.my-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+
+.title:hover, .my-link:hover, .inline-link:hover {
+  color: var(--link);
+  text-decoration: none;
 }
 
 .chart-reset {
@@ -60,49 +70,41 @@ h2 {
   border: 1px solid black;
 }
 
-.quote {
-  font-style: italic;
-}
-
-/* user testing indicated body font was not clear enough on charts */
-.charts text {
-  font-family: "Muli", Arial, sans-serif;
-  font-size: 1.2em;
-  letter-spacing: 0.05em;
-}
-
-.my-nav {
-  display: flex;
-  flex-direction: column;
-  padding-left: 0;
-  margin-bottom: 0;
-  list-style: none;
-  color: #fff;
-  font-size: 1.2em;
-}
-
-.my-link {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: #fff;
-  text-decoration: none;
-}
-
-.title:hover, .my-link:hover, .inline-link:hover {
-  color: var(--link);
-  text-decoration: none;
-}
-
-.quote {
-  font-size: 1.3em;
+/*large left margin to accomodate sidenav*/
+main {
+  margin-left: 18vw;
+  margin-right: 2vw;
 }
 
 .jumbotron {
   padding: 2rem 1rem;
 }
 
+.quote {
+  font-size: 1.3em;
+  font-style: italic;
+}
+
+.intro-btn {
+  background-color: var(--link);
+}
+
+.card {
+  flex-grow: 1;
+}
+
 .card-header {
   background-color: transparent;
+}
+
+.charts {
+  margin: 0 auto 0 auto;
+}
+
+.charts text {  /* user testing indicated body font was not clear enough on charts */
+  font-family: "Muli", Arial, sans-serif;
+  font-size: 1.2em;
+  letter-spacing: 0.05em;
 }
 
 #per-country-piechart1 {
@@ -117,14 +119,6 @@ h2 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-
-.card {
-  flex-grow: 1;
-}
-
-.charts {
-  margin: 0 auto 0 auto;
 }
 
 #the-map {
@@ -145,6 +139,10 @@ div.map {
   
 /*move nav from sidebar position to top on small devices*/
 @media (max-width: 1370px) {
+  main {
+    margin: 220px auto 0 auto;
+  }
+
   .desktop {
     display: none;
   }
@@ -173,11 +171,18 @@ div.map {
     padding: 1vh; 
   }
   
+  .centre-title {
+    text-align: center;
+  }
+  
+  .centre-title p {
+    font-style: italic;
+    font-size: 0.9em;
+  }
+  
   .my-link {
     display: block;
     padding: 0.1rem 1rem;
-    color: #fff;
-    text-decoration: none;
   }
   
   .chart-reset {
@@ -186,10 +191,6 @@ div.map {
   
   .intro-btn {
     display: none;
-  }
-
-  main {
-    margin: 220px auto 0 auto;
   }
 }
 
