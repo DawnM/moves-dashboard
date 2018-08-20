@@ -70,5 +70,5 @@ I use [GitHub](https://github.com) for versioning. For the versions available, s
 ## Acknowledgments
 
 * Yoni Lavi, my Code Institute mentor.
-* Online query solutions as credited in the comments at the relevent points in my code.
+* Fellow students at Code Institute for their general feedback on the presentation of the website.
 * Coralize, for her proof reading skills and all-round support.
