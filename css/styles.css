@@ -131,6 +131,10 @@ div.map {
   margin-bottom: 40px;
 }
 
+.smartphone {
+  display: none;  /*this div is only required if the user is trying to view the dashboard on a device that is impractically small */
+}
+
 @media (max-width: 1555px) {
   #per-country-piechart1 {
     margin-left: 0vw;
@@ -203,5 +207,27 @@ div.map {
   div.map {
     height: 85vh;
     margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 800px) {
+  .desktop, .white, main {
+    display: none
+  }
+  
+  .smartphone {
+    display: block;
+    background-image: url(bgd-charts.png);
+    background-repeat: no-repeat;
+  }
+  
+  .smartphone-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    font-style: italic;
+    background-color: rgb(230,230,230); /* fallback color */
+    background-color: rgba(255,255,255,0.8);
+    padding: 1em;
+    height: 100vh;
   }
 }
